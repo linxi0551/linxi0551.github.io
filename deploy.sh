@@ -21,3 +21,4 @@ git push -f git@github.com:linxi0551/blogs.github.io.git master
 
 cd -
 
+rm -rf docs/.vuepress/dist

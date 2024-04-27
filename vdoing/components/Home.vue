@@ -153,11 +153,11 @@
           :tagsData="$categoriesAndTags.tags"
           :length="30"
         />
-        <div
+        <!-- <div
           class="custom-html-box card-box"
           v-if="homeSidebarB"
           v-html="homeSidebarB"
-        ></div>
+        ></div> -->
       </template>
     </MainLayout>
   </div>

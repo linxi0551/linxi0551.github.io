@@ -1,7 +1,7 @@
 <template>
   <aside class="blogger-wrapper card-box">
     <div class="avatar">
-      <img :src="blogger.avatar" alt="头像" title="我好看吗" />
+      <img :src="blogger.avatar" alt="头像"  />
     </div>
     <div class="icons" v-if="social && social.icons && social.icons.length">
       <a
@@ -66,11 +66,14 @@ export default {
       &:hover
         color $accentColor
   .blogger
+    text-align: center
     padding 0.3rem 0.95rem 0 0.95rem
     .name
       font-size 1.3rem
       display block
       margin-bottom 6px
+      
     .slogan
       color var(--textColor)
 </style>
+
