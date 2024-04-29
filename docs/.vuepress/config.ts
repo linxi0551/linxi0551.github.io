@@ -12,13 +12,13 @@ const DOMAIN_NAME = 'xugaoyi.com' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing', // 使用npm主题包
-  // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
+  // theme: 'vdoing', // 使用npm主题包
+  theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
 
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "Evan's blog",
+      title: "Regulus blog",
       description: 'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
     }
   },
@@ -117,9 +117,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
     ],
-    sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-    logo: '/img/logo.png', // 导航栏logo
-    repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    sidebarDepth: 1, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
+    logo: '/img/r.png', // 导航栏logo
+    repo: 'linxi0551/linxi0551.github.io', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -137,12 +137,15 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // pageStyle: 'line', // 页面风格，可选值：'card'卡片 | 'line' 线（未设置bodyBgImg时才生效）， 默认'card'。 说明：card时背景显示灰色衬托出卡片样式，line时背景显示纯色，并且部分模块带线条边框
 
     bodyBgImg: [
-      'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
-      'https://tuchuang.voooe.cn/images/2024/04/25/home_bg.webp',
-      'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
-      'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200507175846.jpeg'
+      // 'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
+      // 'https://tuchuang.voooe.cn/images/2024/04/25/home_bg.webp',
+      // 'https://tuchuang.voooe.cn/images/2024/04/28/sky.jpg',
+      'https://tuchuang.voooe.cn/images/2024/04/28/starrysky1.jpg',
+      // 'https://tuchuang.voooe.cn/images/2024/04/28/sky2.jpg',
+      // 'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
+      // 'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200507175846.jpeg'
     ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时隔bodyBgImgInterval切换一张。
-    bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~1.0, 默认0.5
+    bodyBgImgOpacity: 1.0, // body背景图透明度，选值 0.1~1.0, 默认0.5
     bodyBgImgInterval: 15, // body多张背景图时的切换间隔, 默认15，单位s
     // titleBadge: false, // 文章标题前的图标是否显示，默认true
     // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
@@ -207,9 +210,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 页脚信息
     footer: {
+      link: 'https://github.com/linxi0551',
       createYear: 2024, // 博客创建年份
       copyrightInfo:
-        'Regulus Lin | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        'Regulus Lin | MIT License', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
@@ -226,7 +230,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
+    ['link', { rel: 'icon', href: '/img/r.png' }], //favicons，资源放在public文件夹
     [
       'meta',
       {
@@ -249,6 +253,59 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 插件配置
   plugins: <UserPlugins>[
+    [
+      "@vuepress-reco/vuepress-plugin-bgm-player",{
+        audios: [
+          // 本地文件示例
+          // {
+          //   name: '장가갈 수 있을까',
+          //   artist: '咖啡少年',
+          //   url: '/bgm/1.mp3',
+          //   cover: '/bgm/1.jpg'
+          // },
+          // 网络文件示例
+          {
+            name: 'Lemon',
+            artist: '米津玄师',
+            url: 'http://cdn5.lizhi.fm/audio/2018/06/21/2676453534199338502_hd.mp3',
+            cover: 'https://p1.music.126.net/qTSIZ27qiFvRoKj-P30BiA==/109951165895951287.jpg?param=200y200'
+          },
+          {
+            name: 'LOSER',
+            artist: '米津玄师',
+            url: 'http://cdn5.lizhi.fm/audio/2020/02/16/2788786851921456646_hd.mp3',
+            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2020/02/16/2788786851921457159.png'
+          },
+          {
+            name: '馬と鹿',
+            artist: '米津玄师',
+            url: 'http://cdn5.lizhi.fm/audio/2019/12/20/2778021842377304070_hd.mp3',
+            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2019/12/20/2778021841786973191.jpg'
+          },
+          {
+            name: '春雷',
+            artist: '米津玄师',
+            url: 'http://cdn5.lizhi.fm/audio/2020/02/16/2788789898767453190_hd.mp3',
+            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2020/02/16/2788789898774963719.png'
+          },
+          {
+            name: '灰色と青',
+            artist: '米津玄師&菅田将暉',
+            url: 'http://cdn5.lizhi.fm/audio/2019/10/27/2767961626071376902_hd.mp3',
+            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2019/10/27/2767961626072667143.jpg'
+          },
+          {
+            name: '打上花火',
+            artist: 'DAOKO&米津玄師',
+            url: 'http://cdn5.lizhi.fm/audio/2019/02/21/2721882174536378886_hd.mp3',
+            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2019/02/21/2721882174229112839.jpg'
+          },
+        ],
+        position:{ right: '100px', bottom: '10px', 'z-index': '999999'},
+        floatPosition:'right'
+      }
+    ],
+
     [
       "sitemap", // 网站地图
       {
@@ -335,11 +392,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
+          clientID: '0be0f686cd1e80bc313d',
+          clientSecret: '42737e70bbf82218c6fd5e0500ef04acd84ff179',
+          repo: 'linxi0551.github.io', // GitHub 仓库
+          owner: 'linxi0551', // GitHub仓库所有者
+          admin: ['linxi0551'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50

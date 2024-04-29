@@ -66,7 +66,6 @@ export default {
       &:hover
         color $accentColor
   .blogger
-    text-align: center
     padding 0.3rem 0.95rem 0 0.95rem
     .name
       font-size 1.3rem

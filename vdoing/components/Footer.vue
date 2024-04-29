@@ -16,7 +16,7 @@
     <a
       href="https://github.com/linxi0551/blogs.github.io"
       target="_blank"
-      title="本站主题"
+      title="本站主题1"
       >Vdoing</a
     >
     <template v-if="footer">
