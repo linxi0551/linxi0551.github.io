@@ -35,9 +35,9 @@ features: # 可选的
 ---
 
 <!-- 左下角动图 -->
-<a href="http://m.kvov.com/" target="_blank">
+<!-- <a href="http://m.kvov.com/" target="_blank">
   <img src="/img/td1.gif" class="panda no-zoom" style="width: 150px;height: 150px;opacity: 1;margin-bottom: -4px;padding-bottom:0;position: fixed;bottom: 0;left: 0.5rem;z-index: 1;">
-</a>
+</a> -->
 <!-- <img src="/img/td1.gif" class="panda no-zoom" style="width: 150px;height: 150px;opacity: 1;margin-bottom: -4px;padding-bottom:0;position: fixed;bottom: 0;left: 0.5rem;z-index: 1;"> -->
 
 <!--

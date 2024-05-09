@@ -35,64 +35,80 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
-            text: '前端文章',
-            items: [
-              { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
-            ],
-          },
-          {
             text: '学习笔记',
             items: [
-              { text: '《JavaScript教程》', link: '/note/javascript/' },
-              { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-              { text: '《ES6 教程》', link: '/note/es6/' },
-              { text: '《Vue》', link: '/note/vue/' },
-              { text: '《React》', link: '/note/react/' },
-              {
-                text: '《TypeScript 从零实现 axios》',
-                link: '/note/typescript-axios/',
-              },
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-              {
-                text: 'TypeScript',
-                link: '/pages/51afd6/',
-              },
-              {
-                text: 'JS设计模式总结',
-                link: '/pages/4643cd/',
-              },
+              { text: '《Vue2笔记》', link: '/note/vue2/' },
             ],
           },
+          // {
+          //   text: '前端文章',
+          //   items: [
+          //     { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
+          //   ],
+          // },
+          // {
+          //   text: '学习笔记',
+          //   items: [
+          //     { text: '《JavaScript教程》', link: '/note/javascript/' },
+          //     { text: '《JavaScript高级程序设计》', link: '/note/js/' },
+          //     { text: '《ES6 教程》', link: '/note/es6/' },
+          //     { text: '《Vue》', link: '/note/vue/' },
+          //     { text: '《React》', link: '/note/react/' },
+          //     {
+          //       text: '《TypeScript 从零实现 axios》',
+          //       link: '/note/typescript-axios/',
+          //     },
+          //     {
+          //       text: '《Git》',
+          //       link: '/note/git/',
+          //     },
+          //     {
+          //       text: 'TypeScript',
+          //       link: '/pages/51afd6/',
+          //     },
+          //     {
+          //       text: 'JS设计模式总结',
+          //       link: '/pages/4643cd/',
+          //     },
+          //   ],
+          // },
         ],
       },
       {
-        text: '页面',
-        link: '/ui/',
+        text: '后端',
+        link: '/hd/',
         items: [
-          { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-          { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
+          { text: '学习笔记',
+          items: [
+            { text: '《Java学习笔记》', link: '' },
+            // { text: '《缓存框架》', link: '' },
+            // { text: '《持久层框架》', link: '' }
+          ]
+          },
+          { text: '数据库教程',
+          items: [
+            // { text: '《Mysql》', link: '' }
+          ] 
+          },
         ],
       },
       {
         text: '技术',
         link: '/technology/',
         items: [
-          { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-          { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-          { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
-          { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
+          // { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
+          // { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
+          // { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
+          // { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
         ],
       },
       {
         text: '更多',
         link: '/more/',
         items: [
-          { text: '学习', link: '/pages/f2a556/' },
-          { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-          { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
+          // { text: '学习', link: '/pages/f2a556/' },
+          // { text: '面试', link: '/pages/aea6571b7a8bae86/' },
+          // { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
           { text: '实用技巧', link: '/pages/baaa02/' },
           { text: '友情链接', link: '/friends/' },
         ],
@@ -219,7 +235,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'linxi',
+        name: 'Regulus',
         link: 'https://github.com/linxi0551'
       }
     },
@@ -240,6 +256,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+    ["meta", { name:"referrer", content:"no-referrer"}]
     // [
     //   'script',
     //   {
@@ -265,41 +282,121 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           // },
           // 网络文件示例
           {
-            name: 'Lemon',
-            artist: '米津玄师',
-            url: 'http://cdn5.lizhi.fm/audio/2018/06/21/2676453534199338502_hd.mp3',
-            cover: 'https://p1.music.126.net/qTSIZ27qiFvRoKj-P30BiA==/109951165895951287.jpg?param=200y200'
+            name: '达尔文',
+            artist: '林俊杰',
+            url: 'http://music.163.com/song/media/outer/url?id=2019573476.mp3',
+            cover: 'https://p1.music.126.net/ssPAqFStzmN4KKsHQGrfbg==/109951169493493172.jpg?param=300x300'
           },
           {
-            name: 'LOSER',
-            artist: '米津玄师',
-            url: 'http://cdn5.lizhi.fm/audio/2020/02/16/2788786851921456646_hd.mp3',
-            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2020/02/16/2788786851921457159.png'
+            name: '浪漫血液',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product5th/product25/2018/12/06/2018%E5%B9%B411%E6%9C%8805%E6%97%A521%E7%82%B925%E5%88%86%E6%89%B9%E9%87%8F%E9%A1%B9%E7%9B%AE%E5%8D%8E%E7%BA%B357%E9%A6%96-3/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005751L235.mp3?channelid=02&msisdn=c8c13833-74f5-49b4-8787-3f137593890d&Tim=1709976194547&Key=bc90bd0d64aafca0',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2k/kf/9x.webp'
           },
           {
-            name: '馬と鹿',
-            artist: '米津玄师',
-            url: 'http://cdn5.lizhi.fm/audio/2019/12/20/2778021842377304070_hd.mp3',
-            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2019/12/20/2778021841786973191.jpg'
+            name: '交换余生',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product45/2021/11/0315/2021%E5%B9%B404%E6%9C%8808%E6%97%A511%E7%82%B948%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%8D%8E%E7%BA%B355%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005759Z0S5153807.mp3?channelid=02&msisdn=516fe7c2-beaa-4aa3-8917-2df783b912e6&Tim=1709976384971&Key=7be7f40ce8273af7',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2s/1h/46780cb8fee14362ba0381f5c235cf34.webp'
           },
           {
-            name: '春雷',
-            artist: '米津玄师',
-            url: 'http://cdn5.lizhi.fm/audio/2020/02/16/2788789898767453190_hd.mp3',
-            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2020/02/16/2788789898774963719.png'
+            name: '我还想她',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product10th/productB36/2022/05/0716/2008%E5%B9%B410%E6%9C%8820%E6%97%A5%E6%B5%B7%E8%9D%B6%E5%94%B1%E7%89%87/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058621415163835.mp3?channelid=02&msisdn=3d289834-405a-419e-bfd9-958e4e590003&Tim=1711755487745&Key=c6bda9e004deb932',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/1w/hn/qo.webp'
           },
           {
-            name: '灰色と青',
-            artist: '米津玄師&菅田将暉',
-            url: 'http://cdn5.lizhi.fm/audio/2019/10/27/2767961626071376902_hd.mp3',
-            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2019/10/27/2767961626072667143.jpg'
+            name: '当你',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product5th/product28/2019/02/13/2010%E5%B9%B412%E6%9C%8809%E6%97%A500006%E6%89%B9%E6%AC%A1/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058622883.mp3?channelid=02&msisdn=a1a5eb03-dfdc-467c-ac30-7664d582f72b&Tim=1709976594018&Key=53f859f1413ce0a2',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2h/7s/nu.webp'
           },
           {
-            name: '打上花火',
-            artist: 'DAOKO&米津玄師',
-            url: 'http://cdn5.lizhi.fm/audio/2019/02/21/2721882174536378886_hd.mp3',
-            cover: 'https://cdnimg101.gzlzfm.com/audio_cover/2019/02/21/2721882174229112839.jpg'
+            name: '落在生命里的光',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product46/2023/02/0616/2023%E5%B9%B402%E6%9C%8806%E6%97%A512%E7%82%B921%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY1%E9%A6%96115243/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005974B7U0164510.mp3?channelid=02&msisdn=ed3d146d-0f30-46c1-8f7a-572ea0c85cb5&Tim=1710051536538&Key=83f85513fa30bbfa',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2p/77/e2abf44924a040379acdd0fbee7643ff.webp'
           },
+          {
+            name: '爱不会绝迹',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product10th/productB35/2023/12/0814/2009%E5%B9%B412%E6%9C%8808%E6%97%A5%E6%B5%B7%E8%9D%B6%E5%94%B1%E7%89%87/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058622726141315.mp3?channelid=02&msisdn=34d0df09-9cbb-4756-b0f1-b41f5b58afb1&Tim=1709977061423&Key=a8fec43f0b44749a',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/3a/u5/03559cb54e5b49cf9c92215bc06343f4.webp'
+          },
+          {
+            name: '简简单单',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product5th/product30/2019/03/21/4%E6%9C%88%E5%A5%A5%E8%BF%90%E8%A1%A5%E5%85%85%E6%8C%AF%E9%93%8352%E9%A6%96%E6%AD%8C%E6%9B%B2600586/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058601082.mp3?channelid=02&msisdn=2c373ebb-667f-483c-9f05-27b8cbaf7ec2&Tim=1711934639427&Key=7c34e332492cbcfc',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2y/0v/277d9be039f14587a4f592efe4cf4ba8.webp'
+          },
+
+          {
+            name: '想见你想见你想见你',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product46/2023/02/0616/2023%E5%B9%B402%E6%9C%8806%E6%97%A512%E7%82%B900%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY1%E9%A6%96015229/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005974B7UE164523.mp3?channelid=02&msisdn=6b45f073-e7e1-40ad-9fe1-7f0610f9ccab&Tim=1710051771082&Key=1ae17cde34c4f559',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2h/y1/an.webp'
+          },
+          {
+            name: '关键词',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product43/2021/04/0813/2021%E5%B9%B404%E6%9C%8808%E6%97%A511%E7%82%B948%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%8D%8E%E7%BA%B355%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005759Z0RK133448.mp3?channelid=02&msisdn=f1af4d6b-9566-4de9-9a34-3992ae8e32b6&Tim=1709976699561&Key=0122aca6b1c3147e',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2f/cw/2x.webp'
+          },
+          {
+            name: '恨幸福来过',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product46/2023/02/0616/2023%E5%B9%B402%E6%9C%8806%E6%97%A511%E7%82%B956%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY5%E9%A6%96615230/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005974B7U7164528.mp3?channelid=02&msisdn=2e772461-0788-413d-bf11-407f96bcbc59&Tim=1710063060302&Key=43ca807279311f98',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2h/y1/an.webp'
+          },
+          {
+            name: '握不住的他',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product6th/productB22/2020/05/2822/2010%E5%B9%B412%E6%9C%8809%E6%97%A500009%E6%89%B9%E6%AC%A1/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058622886222331.mp3?channelid=02&msisdn=e1ea21e6-887a-41ef-a77e-e075b37a55bd&Tim=1710139318119&Key=8f149301751a686d',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/1w/hn/qo.webp'
+          },
+          {
+            name: '那女孩对我说',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product46/2023/02/0616/2023%E5%B9%B402%E6%9C%8806%E6%97%A511%E7%82%B956%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY5%E9%A6%96615230/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005974B7U5165410.mp3?channelid=02&msisdn=20433d13-acaf-4127-aa5a-2e8b5c931bb3&Tim=1709977097298&Key=75e4b4491ebba19c',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2p/77/e2abf44924a040379acdd0fbee7643ff.webp'
+          },
+          {
+            name: '修炼爱情',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product45/2022/07/0419/2018%E5%B9%B411%E6%9C%8809%E6%97%A518%E7%82%B920%E5%88%86%E6%89%B9%E9%87%8F%E9%A1%B9%E7%9B%AE%E5%8D%8E%E7%BA%B353%E9%A6%96-8/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005751KTMT193420.mp3?channelid=02&msisdn=49f48c10-b4a8-4611-94dc-3d1035a02fe6&Tim=1709976872762&Key=d92ffaff279918cf',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2u/mb/d93864e0a1874b3f804185304d768987.webp'
+          },
+          {
+            name: '原来',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/ringmaker01/n10/music2/2016/05/4%E6%9C%88%E5%A5%A5%E8%BF%90%E6%AD%8C%E6%9B%B2%E8%A1%A5%E5%85%85%E5%BD%A9%E9%93%8334%E9%A6%96600586/%E6%AD%8C%E6%9B%B2%E4%B8%8B%E8%BD%BD/MP3_320_16_Stero/%E5%8E%9F%E6%9D%A5%28%E5%AE%8C%E7%BE%8E%E6%8E%A8%E8%8D%90%E7%89%88%29-%E6%9E%97%E4%BF%8A%E6%9D%B0.mp3?channelid=02&msisdn=ad4c243f-371d-4d61-8acf-685ce2af183a&Tim=1711768331921&Key=4079f883f9ae6d01',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2y/0v/277d9be039f14587a4f592efe4cf4ba8.webp'
+          },
+          {
+            name: '可惜没如果',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product9th/product44/2021/08/0306/2017%E5%B9%B412%E6%9C%8819%E6%97%A511%E7%82%B916%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E4%B8%96%E7%BA%AA%E6%81%92%E9%80%9A670%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/63268606554061205.mp3?channelid=02&msisdn=a8c5dd1f-900b-4b96-ae77-de44fd7e6fdb&Tim=1709977798906&Key=1a5e2956e4796df4',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2u/ig/bbedab5618f2474fb7c581030a5c3889.webp'
+          },
+          {
+            name: '不懂',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product6th/productB23/2020/06/0520/4%E6%9C%88%E5%A5%A5%E8%BF%90%E6%AD%8C%E6%9B%B2%E8%A1%A5%E5%85%85%E5%BD%A9%E9%93%8334%E9%A6%96600586/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058600886201202.mp3?channelid=02&msisdn=f1549a0b-0a0d-481a-ac48-249c160cc05c&Tim=1711830729561&Key=c5870768e0411b28',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2y/0v/277d9be039f14587a4f592efe4cf4ba8.webp'
+          },
+          {
+            name: '心墙',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product10th/productB35/2022/05/0916/2010%E5%B9%B412%E6%9C%8809%E6%97%A500010%E6%89%B9%E6%AC%A1/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058622887161757.mp3?channelid=02&msisdn=0f3abcd0-10d0-4fb0-bd3b-edee31374846&Tim=1709976804801&Key=8e60956bb9c28222',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2h/7s/nu.webp'
+          },
+          {
+            name: 'Despacito 缓缓',
+            artist: '林俊杰',
+            url: 'https://freetyst.nf.migu.cn/public/product5th/product34/2019/07/2520/2018%E5%B9%B401%E6%9C%8826%E6%97%A516%E7%82%B906%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E6%AD%A3%E4%B8%9C1%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005669Z0YX.mp3?channelid=02&msisdn=14e55c08-1d94-4976-91ea-fc033a3928e2&Tim=1713496342893&Key=21965e788e962c1b',
+            cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2w/iw/608f71ce568140a0b82d134470dd8289.webp'
+          },
+          
         ],
         position:{ right: '100px', bottom: '10px', 'z-index': '999999'},
         floatPosition:'right'
