@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
-const DOMAIN_NAME = 'xugaoyi.com' // 域名 (不带https)
+const DOMAIN_NAME = 'regulus.icu' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
@@ -78,28 +78,30 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '后端',
         link: '/hd/',
         items: [
-          { text: '学习笔记',
-          items: [
-            { text: '《Java学习笔记》', link: '' },
-            // { text: '《缓存框架》', link: '' },
-            // { text: '《持久层框架》', link: '' }
-          ]
+          {
+            text: '学习笔记',
+            items: [
+              { text: '《Java学习笔记》', link: '' },
+              // { text: '《缓存框架》', link: '' },
+              // { text: '《持久层框架》', link: '' }
+            ]
           },
-          { text: '数据库教程',
-          items: [
-            // { text: '《Mysql》', link: '' }
-          ] 
+          {
+            text: '数据库教程',
+            items: [
+              // { text: '《Mysql》', link: '' }
+            ]
           },
         ],
       },
       {
-        text: '技术',
-        link: '/technology/',
-        items: [
-          // { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-          // { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-          // { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
-          // { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
+        text: '技术', link: '/technology/', items: [
+          {
+            text: '教程', items: [
+              { text: '《程序员入职指南》', link: '/pages/44f0e1/' },
+              { text: '《IDEA 2024.1.1安装教程》', link: '/pages/cb8da0/' }
+            ],
+          }
         ],
       },
       {
@@ -109,7 +111,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           // { text: '学习', link: '/pages/f2a556/' },
           // { text: '面试', link: '/pages/aea6571b7a8bae86/' },
           // { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
-          { text: '实用技巧', link: '/pages/baaa02/' },
+          { text: '实用技巧', link: '/pages/dcebaf/' },
           { text: '友情链接', link: '/friends/' },
         ],
       },
@@ -140,8 +142,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     // docsBranch: 'master', // 编辑的文件所在分支，默认master。 注意：如果你的分支是main则修改为main
-    editLinks: true, // 启用编辑
-    editLinkText: '编辑',
+    // editLinks: true, // 启用编辑
+    // editLinkText: '编辑',
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
@@ -239,13 +241,42 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: 'https://github.com/linxi0551'
       }
     },
-
+    indexImg: {
+      navColor: 2,    // 导航栏左侧名字、中间搜索框、右侧字体的颜色，1 是黑色，2 是白色。默认是 1
+      switchNavColor: true,    // 页面移出大图片的位置后，navColor 是否变换，如由白色变黑色，黑色变白色。默认是 false
+      // 因为本主题的默认背景色偏向白色，如果 navColor 是 2，建议需要开启(true)，否则白背景 + 白字体 = 看不见
+      bgTimeColor: false,     // 是否开启图片的背景色随一天的不同时间而变化，并且开启时间窗口提示，默认是 false。时间分为四种：白天（原图）、黄昏（偏黄）、晚上（偏黑）、深夜（偏深黑）
+      bgTimeColorArray: ['transparent', 'rgba(255, 148, 48, .2)', 'rgba(0, 0, 0, .3)', 'rgba(0, 0, 0, .5)'],   // 第一个是白天的颜色（默认原图），第二个是黄昏的颜色，第三个是晚上的颜色，第四个是深夜的颜色。bgTimeColor 为 true 生效。提示：如果不想要这个效果，但是又想要时间窗口提示效果，则改为 ['transparent', 'transparent', 'transparent', 'transparent']
+      descFade: true,   // 是否开启图片中间描述的淡入效果，默认为 false
+      desc: ["我们都生活在阴沟里，但仍有人仰望星空 —— 来自 王尔德", "唯一的好是知识，唯一的坏是无知 —— 来自 苏格拉底", "宁可去追求虚无，也不能无所追求 —— 来自 弗里德里希", "停止奋斗，生命也就停止了 —— 来自 托马斯"],  // 多个描述，如果填写则覆盖 config.js 的 description，不填写默认读取 config.js 的 description，descFade 为 true 生效
+      descFontSize: '1.4rem',   // desc 的字体大小，默认 1.4rem。提示：原主题是 1.1rem
+      descFadeInTime: 200,  // 描述的淡入效果持续时间，descFade 为 true 生效，默认 200 毫秒
+      descFadeOutTime: 100,  // 描述的淡出效果持续时间，descFade 为 true 生效，默认 100 毫秒
+      descNextTime: 800,  // 当存在多个 desc 时，一个 desc 展示完后或准备开始时，多少秒后出现下一个 desc，默认 800 毫秒
+      bubble: false,    // 是否开启图片的气泡效果，默认为 false
+      bubblePosition: 0,  // 气泡效果的位置，范围：0-100，不同数值代表不同的起始位置，0是整个图片，50是半张图（一半的下方）。bubble 为 true 生效。默认是 0
+      bubbleNum: 200,   // 气泡的个数，bubble 为 true 生效，默认 200 个
+    },
+    
     // 自定义hmtl(广告)模块
     htmlModules
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
+    // 引入jquery
+    ["script", {
+      "language": "javascript",
+      "type": "text/javascript",
+      "src": "https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js",
+      // "src": "/js/jquery.min.js"
+    }],
+    // 引入鼠标点击脚本
+    ["script", {
+      "language": "javascript",
+      "type": "text/javascript",
+      "src": "/js/MouseClickEffect.js"
+    }],
     ['link', { rel: 'icon', href: '/img/r.png' }], //favicons，资源放在public文件夹
     [
       'meta',
@@ -254,9 +285,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
+    // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    ["meta", { name:"referrer", content:"no-referrer"}]
+    ["meta", { name: "referrer", content: "no-referrer" }]
     // [
     //   'script',
     //   {
@@ -270,8 +301,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 插件配置
   plugins: <UserPlugins>[
+    //  [
+    //     {
+    //         name: 'custom-plugins',
+    //         globalUIComponents: ["Fantasy"]
+    //     }
+    // ],
     [
-      "@vuepress-reco/vuepress-plugin-bgm-player",{
+      "@vuepress-reco/vuepress-plugin-bgm-player", {
         audios: [
           // 本地文件示例
           // {
@@ -396,10 +433,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             url: 'https://freetyst.nf.migu.cn/public/product5th/product34/2019/07/2520/2018%E5%B9%B401%E6%9C%8826%E6%97%A516%E7%82%B906%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E6%AD%A3%E4%B8%9C1%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005669Z0YX.mp3?channelid=02&msisdn=14e55c08-1d94-4976-91ea-fc033a3928e2&Tim=1713496342893&Key=21965e788e962c1b',
             cover: 'https://d.musicapp.migu.cn/data/oss/resource/00/2w/iw/608f71ce568140a0b82d134470dd8289.webp'
           },
-          
+
         ],
-        position:{ right: '100px', bottom: '10px', 'z-index': '999999'},
-        floatPosition:'right'
+        position: { right: '100px', bottom: '10px', 'z-index': '999999' },
+        floatPosition: 'left'
       }
     ],
 
@@ -415,7 +452,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'vuepress-plugin-baidu-tongji', // 百度统计
       {
-        hm: baiduCode,
+        hm: '5734cb65195c55455906a66aa60cee5f',
       },
     ],
 
@@ -424,7 +461,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 可以添加第三方搜索链接的搜索框（继承原官方搜索框的配置参数）
     [
-      'thirdparty-search',
+      // 'thirdparty-search',
+      'fulltext-search',
       {
         thirdparty: [
           {

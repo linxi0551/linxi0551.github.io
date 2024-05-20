@@ -3,11 +3,13 @@ home: true
 heroImage: /img/r.png
 heroText: Regulus blog
 tagline: 我们都生活在阴沟里，但仍有人仰望星空
-actionText: 开始阅读 →
-actionLink: /web/
-bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
+# actionText: 开始阅读 →
+# actionLink: /web/
+# bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
-features: # 可选的
+pageClass: vdoing-index-class
+
+# features: # 可选的
   # - title: 前端
   #   details: JavaScript、ES6、Vue框架等前端技术
   #   link: /web/ # 可选
@@ -20,16 +22,16 @@ features: # 可选的
   #   details: 技术文档、教程、技巧、总结等文章
   #   link: /technology/
   #   imgUrl: /img/other.png
-  - title: 苏格拉底
-    details: 唯一的好是知识，唯一的坏是无知
-  - title: 弗里德里希·威廉·尼采
-    details: 宁可去追求虚无，也不能无所追求
-  - title: 托马斯·卡莱尔
-    details: 停止奋斗，生命也就停止了
+  # - title: 苏格拉底
+  #   details: 唯一的好是知识，唯一的坏是无知
+  # - title: 弗里德里希·威廉·尼采
+  #   details: 宁可去追求虚无，也不能无所追求
+  # - title: 托马斯·卡莱尔
+  #   details: 停止奋斗，生命也就停止了
 
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
-# postList: detailed
+postList: detailed
 # simplePostListLength: 10 # 简约版文章列表显示的文章数量，默认10。（仅在postList设置为simple时生效）
 # hideRightBar: true # 是否隐藏右侧边栏
 ---
@@ -93,3 +95,7 @@ features: # 可选的
 - **GitHub**: <https://github.com/xugaoyi>
 
 </br>  -->
+
+<ClientOnly>
+  <IndexBigImg/>
+</ClientOnly>
