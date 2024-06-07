@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>加密的那些事</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="\r?\n---\r?\n" data-separator-vertical="\r?\n----\r?\n">
+          <textarea data-template>
+            
+
+
+
+### 历史上的密码
+
+<!-- **漫画**：https://cloud.tencent.com/developer/article/1394806 -->
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/zbw5goanfw.jpg' width="500" style="cursor: zoom-in;"></p>
+
+早在古罗马时期，加密算法就被应用于战争当中。 在大规模的战争中，部队之间常常需要信使往来，传递重要的军事情报。 
+
+---
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/s81l0wvnzd.jpg' width="700" style="cursor: zoom-in;"></p>
+
+可是，一旦信使被敌军抓获，重要的军事情报就完全暴露给了敌方。
+
+---
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/thtjd7mn2l.jpg' width="650" style="cursor: zoom-in;"></p>
+
+甚至，狡猾的敌人有可能篡改军事情报，并收买信使把假情报传递给我方部队。
+
+---
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/5rl2i6buw1.jpg' width="700" style="cursor: zoom-in;"></p>
+
+---
+<!-- <p class="centered"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/5rl2i6buw1.jpeg?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p> -->
+
+## 凯撒密码
+
+传送情报过程中，容易遭到**中间人攻击**，怎样防止这种情况的发生呢？ 古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为**凯撒密码**。加密的原理就像下图这样： 
+
+<p class="centered"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/ltlt3t6nuf.png?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky.jpg" -->
+原理其实非常简单，就是把字母表进行移位加密，比如将字母表中的 A 移位加密后变成 C，将字母表中的 B 移位加密后变成 D，以此类推。
+
+---
+
+<center><strong><big> 下面是更直观的示例 </big></strong></center>
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603113844.png' width="600" style="cursor: zoom-in;"></p>
+
+---
+<div id="left">
+
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+**凯撒密码**在当时是一种有效的加密方法，它是典型的**对称加密**算法，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到原文。
+
+这也导致**凯撒密码**的安全性较低，因为只需尝试26个不同的位移就能暴力破解。
+
+</div>
+
+
+<div id="right">
+
+<center><strong><big> 暴力破解凯撒密码的示例 </big></strong></center>
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603140434.png' width="600" style="cursor: zoom-in;"></p>
+</div>
+---
+# 计算机时代的密码
+
+现代加密技术在**凯撒密码**的基础上进行了改进，采用了更复杂的加密算法，如**对称加密（AES、DES）**和**非对称加密（RSA）**。
+
+
+## 二进制编码
+
+学过计算机的都知道，在计算机的世界，所有数据都是以二进制的形式存储的，计算机的运算都是基于二进制的，每个字母当然也是一串二进制数字。
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603145534.png' width="620" style="cursor: zoom-in;"></p>
+
+
+
+<!-- 为什么讲这个，是因为字母是没办法做数学计算的，没办法做加减乘除，但是只要把它转换成编码变成了数字，那么它就能进行简单的数学运算。 -->
+
+## 异或运算
+
+**异或运算**(`XOR`)是一种常见的位操作运算,相同位为0，不同位为1。
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603154039.png' width="350" style="cursor: zoom-in;"></p>
+
+
+**异或运算**有一个非常好的性质，它的性质就是下面这张图
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603171743.png' width="350" style="cursor: zoom-in;"></p>
+
+上图中`A`可以理解为**明文**，`B`可以理解为**密钥**，`A`和`B`异或，那么`A`和`B`异或得到的结果就是**密文**。反之，**密文**和**密钥**进行异或，那么得到的结果就是**明文**`A`。
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603175831.png' width="700" style="cursor: zoom-in;"></p>
+
+上图中字母`D`可以理解为**明文**，蒙版可以理解为**密钥**，`D`和蒙版做异或运算，就会得到一张没有任何信息的图，也就是**密文**。然后把得到的**密文**和蒙版做异或运算就能得到了字母`D`也就是**明文**。这就是对称加密算法的基本原理。
+
+现在用的比较多的对称加密算法有`DES`和`AES`，这两个算法都是把明文切成固定的比特长度大小，再进行复杂的位运算加密，和上面说过的**凯撒密码**类似，当然会比**凯撒密码**更复杂些，然后把加密后的结果再和密钥做一个异或运算，这样就可以获得加密后的密文。
+
+在安全方面，更加推荐使用`AES`,`DES`现在已经被破解了，但由于`DES`很早就被广泛应用，现在一些老旧设备的系统还是使用`DES`加密，尤其是在金融和政府机构的遗留系统中。
+
+## 分组密码模式
+
+分组密码模式，是指将明文分成固定长度的分组，然后对每个分组进行加密，最后将加密后的分组拼接起来，这样加密后的密文长度和明文长度相同。
+ 
+为什么会有这个分组密码模式，是因为大多数对称加密算法处理的是固定长度的数据块，所以通常会采用分组密码模式来处理数据，以便能够加密任意长度的消息。
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604155659.png' width="700" style="cursor: zoom-in;"></p>
+
+---
+
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604155659.png' width="700" style="cursor: zoom-in;"></p>
+
+
+
+---
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604085204.png' width="650" style="cursor: zoom-in;"></p>
+---
+
+
+          </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <!-- <script src="./mermaid/dist/mermaid.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"_":["docs/slides/slides.md"],"static":"docs/slides"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
+    </script>
+  </body>
+</html>
