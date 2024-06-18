@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./dist/reveal.css" />
     <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="reveal">
@@ -20,7 +20,7 @@
             
 
 
-
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 ### 历史上的密码
 
 <!-- **漫画**：https://cloud.tencent.com/developer/article/1394806 -->
@@ -30,47 +30,47 @@
 早在古罗马时期，加密算法就被应用于战争当中。 在大规模的战争中，部队之间常常需要信使往来，传递重要的军事情报。 
 
 ---
-
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/s81l0wvnzd.jpg' width="700" style="cursor: zoom-in;"></p>
 
 可是，一旦信使被敌军抓获，重要的军事情报就完全暴露给了敌方。
 
 ---
-
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/thtjd7mn2l.jpg' width="650" style="cursor: zoom-in;"></p>
 
 甚至，狡猾的敌人有可能篡改军事情报，并收买信使把假情报传递给我方部队。
 
 ---
-
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/5rl2i6buw1.jpg' width="700" style="cursor: zoom-in;"></p>
 
 ---
-<!-- <p class="centered"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/5rl2i6buw1.jpeg?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p> -->
-
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 ## 凯撒密码
 
-传送情报过程中，容易遭到**中间人攻击**，怎样防止这种情况的发生呢？ 古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为**凯撒密码**。加密的原理就像下图这样： 
+传送情报过程中，容易遭到<span style="color:red;">**中间人攻击**</span>，怎样防止这种情况的发生呢？ 古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为<span class="green-text">**凯撒密码**</span>。加密的原理就像下图这样： 
 
 <p class="centered"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/ltlt3t6nuf.png?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p>
 
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky.jpg" -->
-原理其实非常简单，就是把字母表进行移位加密，比如将字母表中的 A 移位加密后变成 C，将字母表中的 B 移位加密后变成 D，以此类推。
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+原理其实非常简单，就是把字母表进行 <span class="green-text">**移位加密**</span>，比如将字母表中的 A 移位加密后变成 C，将字母表中的 B 移位加密后变成 D，以此类推。
 
 ---
-
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 <center><strong><big> 下面是更直观的示例 </big></strong></center>
 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603113844.png' width="600" style="cursor: zoom-in;"></p>
 
 ---
-<div id="left">
+<div class="container">
+<div id="left" style="font-size: 0.60em;">
 
 <!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-**凯撒密码**在当时是一种有效的加密方法，它是典型的**对称加密**算法，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到原文。
+<span class="green-text">**凯撒密码**</span>在当时是一种有效的加密方法，它是典型的<span class="green-text">**对称加密**</span>算法，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到原文。
 
-这也导致**凯撒密码**的安全性较低，因为只需尝试26个不同的位移就能暴力破解。
+这也导致<span class="green-text">**凯撒密码**</span>的安全性较低，因为只需尝试26个不同的位移就能暴力破解。
 
 </div>
 
@@ -81,66 +81,401 @@
 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603140434.png' width="600" style="cursor: zoom-in;"></p>
 </div>
+</div>
 ---
-# 计算机时代的密码
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 计算机时代的密码
 
-现代加密技术在**凯撒密码**的基础上进行了改进，采用了更复杂的加密算法，如**对称加密（AES、DES）**和**非对称加密（RSA）**。
-
-
-## 二进制编码
-
-学过计算机的都知道，在计算机的世界，所有数据都是以二进制的形式存储的，计算机的运算都是基于二进制的，每个字母当然也是一串二进制数字。
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603145534.png' width="620" style="cursor: zoom-in;"></p>
-
-
-
-<!-- 为什么讲这个，是因为字母是没办法做数学计算的，没办法做加减乘除，但是只要把它转换成编码变成了数字，那么它就能进行简单的数学运算。 -->
-
-## 异或运算
-
-**异或运算**(`XOR`)是一种常见的位操作运算,相同位为0，不同位为1。
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603154039.png' width="350" style="cursor: zoom-in;"></p>
-
-
-**异或运算**有一个非常好的性质，它的性质就是下面这张图
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603171743.png' width="350" style="cursor: zoom-in;"></p>
-
-上图中`A`可以理解为**明文**，`B`可以理解为**密钥**，`A`和`B`异或，那么`A`和`B`异或得到的结果就是**密文**。反之，**密文**和**密钥**进行异或，那么得到的结果就是**明文**`A`。
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603175831.png' width="700" style="cursor: zoom-in;"></p>
-
-上图中字母`D`可以理解为**明文**，蒙版可以理解为**密钥**，`D`和蒙版做异或运算，就会得到一张没有任何信息的图，也就是**密文**。然后把得到的**密文**和蒙版做异或运算就能得到了字母`D`也就是**明文**。这就是对称加密算法的基本原理。
-
-现在用的比较多的对称加密算法有`DES`和`AES`，这两个算法都是把明文切成固定的比特长度大小，再进行复杂的位运算加密，和上面说过的**凯撒密码**类似，当然会比**凯撒密码**更复杂些，然后把加密后的结果再和密钥做一个异或运算，这样就可以获得加密后的密文。
-
-在安全方面，更加推荐使用`AES`,`DES`现在已经被破解了，但由于`DES`很早就被广泛应用，现在一些老旧设备的系统还是使用`DES`加密，尤其是在金融和政府机构的遗留系统中。
-
-## 分组密码模式
-
-分组密码模式，是指将明文分成固定长度的分组，然后对每个分组进行加密，最后将加密后的分组拼接起来，这样加密后的密文长度和明文长度相同。
- 
-为什么会有这个分组密码模式，是因为大多数对称加密算法处理的是固定长度的数据块，所以通常会采用分组密码模式来处理数据，以便能够加密任意长度的消息。
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604155659.png' width="700" style="cursor: zoom-in;"></p>
+现代加密技术在<span class="green-text">**凯撒密码**</span>的基础上进行了改进，采用了更复杂的加密算法，如<span class="green-text">**对称加密（AES、DES）**</span>和<span class="green-text">**非对称加密（RSA）**</span>。
 
 ---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 二进制编码
+<small>学过计算机的都知道，在计算机的世界，所有数据都是以二进制的形式存储的，计算机的运算都是基于二进制的，每个字母当然也是一串二进制数字。</small>
 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604155659.png' width="700" style="cursor: zoom-in;"></p>
-
-
-
----
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604085204.png' width="650" style="cursor: zoom-in;"></p>
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603145534.png' width="500" style="cursor: zoom-in;"></p>
 ---
 
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 异或运算
+<small style="font-size: 0.75em;"><span class="green-text">**异或运算**(`XOR`)</span>是一种常见的位操作运算,相同位为0，不同位为1。</small>
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603154039.png' width="500" style="cursor: zoom-in;"></p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<div class="container">
+  <div id="left" style="font-size: 0.70em;">
+异或运算有一个非常好的性质，它的性质就是下面这张图
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603171743.png' width="500" style="cursor: zoom-in;"></p>
+</div>
+<div id="right">
 
+  <section>
+    <p class="fragment fade-in"><small style="font-size: 0.75em;">图中 A 可以理解为<span class="green-text">明文</span>， B 可以理解为<span class="green-text">密钥</span>， A 和 B 异或，那么 A 和 B 异或得到的结果就是<span class="green-text">密文</span>。反之，<span class="green-text">密文</span>和<span class="green-text">密钥</span>进行异或，那么得到的结果就是<span class="green-text">明文</span> A 
+    </small></p>
+  </section>
+
+</div>
+
+</div>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603175831.png' width="600" style="cursor: zoom-in;"></p>
+
+<p class="fragment fade-in" style="font-size: 0.5em;">图中字母D可以理解为<span class="green-text">明文</span>，蒙版可以理解为<span class="green-text">密钥</span>，D和蒙版做异或运算，就会得到一张没有任何信息的图，也就是<span class="green-text">密文</span>。解密时只要把得到的<span class="green-text">密文</span>和蒙版做异或运算就能得到了字母D也就是<span class="green-text">明文</span>。这就是<span class="green-text">对称加密算法</span>的基本原理。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+### 分组密码模式
+
+现在用的比较多的对称加密算法有<span class="green-text">DES</span>和<span class="green-text">AES</span>，这两个算法都是把明文切成<span class="green-text">固定的比特长度大小</span>，再进行复杂的位运算加密，但它们本身只处理固定长度的数据块（例如AES处理128位数据块）。为了适应不同长度的明文信息，保护数据的完整性和安全性，这时候就需要引入<span class="green-text">分组密码模式</span>。
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 明文分组和密文分组
+
+在介绍模式之前，我们先来学习两个术语。
+
+<p class="fragment fade-in" style="font-size: 0.7em;"><mark>明文分组:</mark> 是指分组密码算法中作为加密对象的明文，明文分组的长度与分组密码算法的分组长度是相等的。</p>
+
+<p class="fragment fade-in" style="font-size: 0.75em;"><mark>密文分组:</mark> 是指使用分组密码算法将明文分组加密之后所生成的密文。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/e1d6157e726360b8c83cc8629e1b123.png' width="800" style="cursor: zoom-in;"></p>
+为了避免图示变得复杂，以后我们将 <span class="green-text">"分组密码算法加密"</span> 简写为 <span class="green-text">"加密"</span>，并省略对<span class="green-text">密钥</span>的描述。
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+常见的分组密码模式有五种，分别是：**电码本模式（ECB模式）**、**密码分组链接模式（CBC模式）**、**密文反馈模式（CFB）**、**输出反馈模式（OFB）**、**计数器模式（CTR）**。
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 电码本模式（ECB模式）
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604155659.png' width="500" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" ><small style="font-size: 0.70em;">从上图中可以看到每个数据块都是<span class="green-text">独立加密</span>的，块与块之间不存在任何联系，所以加密的时候可<span class="green-text">并行</span>加密，速度非常快，而且实现也简单。这种模式适用于<span class="green-text">无重复数据</span>的短消息加密场景。这是<span class="green-text">ECB模式</span>的优点。</small></p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<small style="font-size: 0.70em;">那这个模式有什么缺点呢，可以看下下面这个例子：</small>
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/fda187c5d4bf9d3f01f9e3d35d12742.png' width="700" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in"><small style="font-size: 0.50em;">在这个场景中我们可以将付款人银行账号、收款人银行账号和转账金额进行分组，得到明文分组1、2、3的16进制表示的ASCII码序列，通过分组加密后得到分组密文，这时候只知道密文分组1是付款人、密文分组2是收款人、密文分组3是转账金额。至于具体的内容并不知道，因为进行了加密。</small></p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/14/2d64dab3-eea8-433b-8e81-a818b174e13c.jpg' width="700" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" ><small style="font-size: 0.70em;">如果这个时候有<span style="color:red;">黑客攻击</span>，他会用什么手段进行攻击呢？</small></p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/7f96709cce53a75294af2e76e7d5446.png' width="700" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" ><small style="font-size: 0.70em;">攻击者并不需要密钥解密密文，就可以直接操作密文从而影响明文，只要对密文块进行<span style="color:red;">重新排序</span>，就能让解密后的付款人和收款人的顺序进行互换，这对银行转账业务来说是致命的。</small>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+这就是ECB模式的重要缺陷之一，它<span style="color:red;">缺乏扩散性</span>，每个数据块独立加密，彼此之间不存在关联，容易被密文<span span style="color:red;">重排序</span>攻击。并且相同的明文无论出现在哪个位置都会被<span span style="color:red;">加密成相同的密文</span>，这导致它模式是<span style="color:red;">可预测性</span>的。
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 密码分组链接模式（CBC模式）
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="container">
+  <div id="left" style="font-size: 0.70em;">
+    CBC模式加密
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/_20240607101439.png'  style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+</div>
+<div id="right">
+  <p class="fragment fade-in" style="font-size: 0.90em;">
+    加密的过程
+  </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          1. 首先将明文切成若干组。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          2. 明文分组1先和初始向量进行异或运算。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          3. 再用密钥对明文分组1和初始向量异或的结果进行加密，得到密文分组1。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          4. 用密文分组1和明文分组2进行异或运算，异或完后再进行加密得到密文分组2。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          5. 同样的用密文分组2和明文分组3进行异或运算，异或完后再进行加密得到密文分组3，以此类推。
+        </p>
+  
+</div>
+
+</div>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="container">
+  <div id="left" style="font-size: 0.70em;">
+    CBC模式解密
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/88e3616a82c8ad93f1be7a0a756e609.png'  style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+</div>
+<div id="right">
+  <p class="fragment fade-in" style="font-size: 0.90em;">
+    解密的过程
+  </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          1. 首先拿密文分组1来解密。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          2. 密文分组1解密得到的结果和初始化向量做异或运算，就得到明文分组1。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          3. 密文分组2进行解密。
+        </p>
+        <p class="fragment fade-in" style="font-size: 0.70em;">
+          4. 密文分组2解密得到的结果和密文分组1做异或运算，就得到明文分组2，以此类推。
+        </p>
+</div>
+
+</div>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="summary-title" style="font-size: 1.50em;">优点</div>
+<p style="font-size: 0.70em;">这种<span class="green-text">依赖</span>前一个密文分组进行的异或运算就叫做<span class="green-text">CBC模式</span>，这种模式有个好处就是即使相同的明文块在不同位置或不同消息中也会<span class="green-text">产生不同的密文块</span>，并且<span class="green-text">具备数据完整保护性</span>。适用于常规<span class="green-text">文件加密</span>，<span class="green-text">非实时</span>加密场景。</p>
+
+<p style="font-size: 0.70em;">之前通过<span class="green-text">重排序</span>攻击的手段，明显对这种模式是无效的，因为会导致密文块的<span class="green-text">顺序</span>被<span class="green-text">破坏</span>，从而导致解密失败。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+那CBC模式有什么<span style="color:red;">缺陷</span>呢？
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="summary-title" style="font-size: 0.90em;">示例</div>
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/e945024575166790bc0d03a3374788a.png' width="700" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" style="font-size: 0.70em;">从图中可以看到攻击者截获了初始化向量，并对它的某一比特位进行了反转，那么解密后的第一个明文块的相应比特位也会被反转，但其他比特位依然是正确的。<mark><span style="color:red;">也就是说攻击者可以通过操作初始化向量来影响明文，并且不需要密钥</span></mark>，这就是CBC模式的缺陷所在。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 密文反馈模式（CFB）
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+CFB模式加密
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/4a00827a6a0f293a181bb0933d38c89.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+<p class="fragment fade-in" style="font-size: 0.70em;"> <span class="green-text">CFB模式</span>它直接对初始化向量进行加密，加密完的结果跟明文分组1做异或操作，得出密文分组1，密文分组1进行加密后和明文分组2进行异或操作，得出密文分组2，以此类推。</p>
+---
+
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+CFB模式解密
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/5af5e8792d566b188635dfcb62b74e8.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+<p class="fragment fade-in" style="font-size: 0.70em;">解密过程和加密过程非常相似，但 <span class="green-text">方向相反</span>，首先也是对初始化向量进行加密，再和密文分组1做异或操作，得到明文分组1。密文分组1先加密，再和密文分组2做异或操作，得到明文分组2，以此类推。
+</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="summary-title" style="font-size: 1.50em;">优点</div>
+之前通过控制初始化向量来影响明文的攻击手段就无效了，因为把初始向量中的某个比特位反转，会导致<span class="green-text">加密后的密钥流发生变化</span>，从而导致第一个明文块无法正确解密，也就无法通过操控初始化向量来影响明文解密了。
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+那CFB模式有什么<span style="color:red;">缺陷</span>呢？
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/d7dd240cd2b8f0a13c36de753d9f73d.png' width="700" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" style="font-size: 0.68em;">
+  从图中可以看到攻击者截获了数据包，并用<span style="color:red;">以前有效的密文分组</span>对现有的密文分组进行了<span style="color:red;">替换</span>，这就造成了明文分组2的解密出现了错误，但后续的分组还是能正确解密。<mark><span style="color:red;">从某种程度上说，这也是不通过密钥就可以操纵明文</span></mark>，这明显是不对的。
+  </p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 输出反馈模式（OFB模式）
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+OFB模式加密
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/39708d679f6e04c5224816e1e1d10f3.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+<p class="fragment fade-in" style="font-size: 0.70em;"> 上图中也是对初始化向量进行加密，加密完后和明文分组1做异或运算，得出密文分组1，接着再对初始化向量进行加密，然后和明文分组2做异或运算，得出密文分组2，这种反复对初始化向量进行加密，再和明文做异或运算的行为就是<span class="green-text">OFB模式。</span></p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+OFB模式解密
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/f6a5c297428560f05188d0835d2cfa2.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+<p class="fragment fade-in" style="font-size: 0.70em;"> 解密也是如此，只是和初始化向量做异或运算的由<span class="green-text">明文变成了密文</span>。</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="summary-title" style="font-size: 1.50em;">优点</div>
+<p style="font-size: 0.70em;"><span class="green-text">OFB模式</span>由于密钥流<span class="green-text">独立</span>于明文，加密过程不直接作用于明文，而是通过密钥流与明文异或，这意味着相同的明文在不同的密钥流下会产生不同的密文，这有助于<span class="green-text">抵抗模式识别攻击</span>和<span class="green-text">重放攻击</span>。
+</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+那OFB模式有什么<span style="color:red;">缺陷</span>呢？
+
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="fragment fade-in" style="font-size: 0.70em;">每个密钥流块的生成依赖于前一个密钥流块。这种依赖关系导致无法完全并行生成密钥流块。具体来说，必须按照<span style="color:red;">顺序</span>生成密钥流块，只有在生成了前一个密钥流块之后，才能生成下一个密钥流块。尽管在生成密钥流之后，异或操作可以并行执行，但密钥流的生成步骤本身是<span style="color:red;">串行</span>的。这种串行依赖性限制了OFB模式在密钥流生成阶段的<span style="color:red;">并行处理能力</span>。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 计数器模式（CTR模式）
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="container">
+  <div id="left" style="font-size: 0.70em;">
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/f84f7b3815dc1f1917584253ff6d8b9.png' width="700" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+</div>
+<div id="right">
+  <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/a23819b1024be58673db362a9fa462b.png' width="700" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+</div>
+</div>
+<p style="font-size: 0.60em;"class="fragment fade-in" >上图中和<span class="green-text">OFB模式</span>的加密过程类似，只是密钥流分组的生成方式不同，OFB模式密钥流分组是通过将前一个密钥流分组加密得到的。也就是说，它是基于前一次加密操作的输出作为下一次加密的输入，形成一个<span class="green-text">反馈环路</span>。
+  而<span class="green-text">CTR模式</span>是通过<span class="green-text">递增的计数器</span>和初始向量结合后，将这个组合值作为输入加密得到。计数器每次加密前递增，确保每次加密操作使用的是独一无二的输入，从而产生不同的密钥流分组，即使加密相同的明文分组也会产生不同的密文。
+</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+计数器模式中，计数器是如何生成的？
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/3813d265b20e77ccf56c21ae58b7802.png' width="500" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
+<p style="font-size: 0.60em;"class="fragment fade-in" >上图<span class="green-text">前8个字节为随机数</span>，这个值在每次加密时必须都是不同的，<span class="green-text">后8个字节为分组序号</span>，这个部分是会<span class="green-text">逐次累加</span>的。在加密的过程中，计数器的值会产生如下变化：</p>
+<!-- 动态插入代码块的示例，这里简化为展示概念，实际应用中可能需要JavaScript辅助 -->
+<div class="fragment fade-in">
+  <pre><code class="javascript">66 1F 98 CD 37 A3 8B 4B 00 00 00 00 00 00 00 01 明文分组1的计数器</code></pre>
+</div>
+<div class="fragment fade-in">
+  <pre><code class="javascript">61 2F 22 54 21 46 5F 6E 00 00 00 00 00 00 00 02 明文分组2的计数器</code></pre>
+</div>
+<div class="fragment fade-in">
+  <pre><code class="javascript">63 1C 31 ED TR 57 23 1F 00 00 00 00 00 00 00 03 明文分组3的计数器</code></pre>
+</div>
+<div class="fragment fade-in">
+  <pre><code class="javascript">42 1E E1 BC 13 12 81 24 00 00 00 00 00 00 00 04 明文分组4的计数器</code></pre>
+</div>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="summary-title" style="font-size: 1.50em;">优点</div>
+<p style="font-size: 0.70em;">CTR模式的这种计数器生成和使用方法确保了密钥流的<span class="green-text">唯一性</span>和<span class="green-text">安全性</span>，并且加密和解密过程都可以<span class="green-text">并行</span>处理，<span class="green-text">效率高</span>。</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<div class="summary-title" style="font-size: 1.00em;">总结</div>
+<p style="font-size: 0.60em;text-align: left;">
+  不同的加密模式适用于不同的应用场景，选择合适的加密模式需要考虑安全性、实现复杂度、处理速度和具体应用场景的需求。以下是一些选择的原则：
+</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">1、通用数据加密（如文件存储、数据库加密）:</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">CBC模式: 提供了较好的数据混淆，防止模式识别，适合大多数加密需求。但注意，对于大数据量处理，CBC模式的顺序执行可能影响性能。</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">2、实时通信（如网络数据传输）:</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">CTR模式: 由于其并行性和高效性，CTR模式非常适合需要高速处理的实时数据加密，如网络流量加密。</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">OFB模式: 同样支持并行处理，适用于需要流式加密的场景，但不如CTR常见，因为CTR模式更灵活且在现代系统中更受欢迎。</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">3、资源受限设备（如嵌入式系统）:</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">ECB模式: 对于极度资源受限的环境，虽然安全性较低，但ECB模式简单，易于实现，且不需要维护状态，适合简单或一次性数据加密。</p>
+<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">CFB模式: 在资源有限但需要一定安全性和错误隔离的情况下，CFB可以作为折衷方案，因为它相比ECB提供了更好的安全性，但比CBC和CTR的资源消耗低。</p>
+  
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+### 公钥密码
+
+公钥密码，也称为<span class="green-text">非对称密码</span>，是一种加密技术，它使用一对密钥：<span class="green-text">公钥（public key）</span>和<span class="green-text">私钥（private key）</span>。因为 <span class="green-text">加密</span> 和 <span class="green-text">解密</span> 使用的是两个不同的密钥，所以这种算法称为 <span class="green-text">非对称加密算法</span>，常见的 <span class="green-text">非对称算法</span> 主要有`RSA`、`DSA`、`ECC`等。 
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+#### 一点历史
+<p class="fragment fade-in" style="font-size: 0.65em;">1976年以前，所有的加密方法都是同一种模式：</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">1. 甲方选择某一种加密规则，对信息进行加密</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">2. 乙方使用同一种规则，对信息进行解密</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">由于加密和解密使用同样规则（简称"密钥"），这被称为"对称加密算法"。
+<p class="fragment fade-in" style="font-size: 0.65em;">这种加密模式有一个最大弱点：甲方必须把加密规则告诉乙方，否则无法解密。保存和传递密钥，就成了最头疼的问题。
+</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/bg2013062703.jpg' width="500" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" style="font-size: 0.65em;">1976年，两位美国计算机学家菲尔德·迪菲(Whitfield Diffie) 和 马丁·赫尔曼(Martin Hellman)，提出了一种崭新构思，可以在不直接传递密钥的情况下，完成解密。这被称为"Diffie-Hellman密钥交换算法"。这个算法启发了其他科学家。人们认识到，加密和解密可以使用不同的规则，只要这两种规则之间存在某种对应关系即可，这样就避免了直接传递密钥。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+<p class="fragment fade-in" style="font-size: 0.75em;">这种新的加密模式被称为"非对称加密算法"</p>
+<p class="fragment fade-in" style="font-size: 0.75em;">工作流程</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">（2）甲方获取乙方的公钥，然后用它对信息加密。</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">（3）乙方得到加密后的信息，用私钥解密。</p>
+<p class="fragment fade-in" style="font-size: 0.65em;">如果公钥加密的信息只有私钥解得开，那么只要私钥不泄漏，通信就是安全的。</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/bg2013062702.jpg' width="500" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in" style="font-size: 0.55em;">1977年，三位数学家罗纳德·李维斯特（Rivest）、阿迪·萨莫尔（Shamir） 和 伦纳德·阿德曼（Adleman） 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做RSA算法。
+从那时直到现在，RSA算法一直是最广为使用的"非对称加密算法"。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。
+这种算法非常可靠，密钥越长，它就越难破解。根据已经披露的文献，目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/13/4c19788c01e101a8cd8f2964619f3d7.png' width="500" style="cursor: zoom-in;"></p>
+
+<p class="fragment fade-in" style="font-size: 0.55em;">上图是2048位的密钥，早在1991年，RSA实验室就公布了一份数字列表，并向任何人提出挑战，以20万美元的奖金计算这些数字。</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+### 原理 
+讲原理前，需要知道一些数学知识，先回顾一下小学的数学知识😀
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+因数
+``` java
+给定方程 a × b = c，数字 a 和 b 被定义为因数，因为它们的乘积等于 c。
+
+例如:
+
+当 2 × 3 = 6 时，数字 2 和 3 构成了 6 的一组因数。
+
+同样，对于 1 × 6 = 6，数字 1 和 6 也是 6 的另一组因数。
+
+因此，数字 6 拥有至少两组因数。
+```
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+质数
+``` java
+1 × a = a 根据质数的定义，如果一个大于1的整数 a 仅有两个不同的正因数，
+
+即 1 和 a 本身，那么该整数 a 被视为质数。
+
+例如：
+
+1 × 5 = 5，我们看到 5 大于 1，并且其唯一的正因数是 1 和 5。
+
+因此，根据上述质数的定义，数字 5 是一个质数。
+```
+
+---
+
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+余数
+``` java
+在表达式 a % b = c 中，% 表示取模运算，也称为模运算或求余运算。
+
+例如:
+
+计算3除以2的余数,过程如下：
+
+除法运算：
+
+3 ÷ 2 = 1.5
+
+取整数部分：
+
+1.5的整数部分是1
+
+计算乘积：
+
+2 x 1 = 2
+
+计算余数：
+
+3 - 2 = 1
+
+因此,3除以2的余数是1。
+
+用公式表示：
+
+3÷2=1(商)
+
+3 - (2 x 1)= 1 (余数)
+
+所以,3 % 2 = 1。
+```
+
+---
           </textarea>
         </section>
       </div>
-    </div>
+    </div>  
 
     <script src="./dist/reveal.js"></script>
 
@@ -153,7 +488,20 @@
     <script src="./plugin/zoom/zoom.js"></script>
     <script src="./plugin/notes/notes.js"></script>
     <script src="./plugin/math/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script>
+    function zoomImage(img) {
+            if (img.classList.contains('zoomed')) {
+                img.classList.remove('zoomed');
+            } else {
+                // Remove 'zoomed' class from all images first
+                document.querySelectorAll('.image-container img').forEach(image => {
+                    image.classList.remove('zoomed');
+                });
+                img.classList.add('zoomed');
+            }
+        }
+
       function extend() {
         var target = {};
         for (var i = 0; i < arguments.length; i++) {

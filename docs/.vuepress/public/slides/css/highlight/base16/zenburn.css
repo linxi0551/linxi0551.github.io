@@ -162,24 +162,51 @@ code.hljs {
   font-weight: bold
 }
 
+.container {
+  display: flex; /* 启用Flex布局 */
+  justify-content: space-between; /* 水平间距分配，使两个区块左右分布 */
+  align-items: center; /* 垂直居中对齐内容 */
+  width: 100%;
+}
 
-#left {
-  margin: 10px 0 15px 20px;
-  text-align: left;
-  float: left;
-  z-index:-10;
-  width:48%;
+#left, #right {
+  /* 移除之前的浮动和行内块设置，因为Flex布局不再需要这些 */
+  margin: 10px 0;
+  width: 50%; /* 保持宽度不变 */
   font-size: 0.85em;
-  line-height: 1.5; 
- }
-  
- #right {
-  margin: 10px 0 15px 0;
-  float: right;
-  text-align: left;
-  z-index:-10;
-  width:48%;
-  font-size: 0.85em;
-  line-height: 1.5; 
- }
- 
+  line-height: 1.5;
+  text-align: center; /* 保持文本居中 */
+}
+
+/* 定义绿色文本的样式 */
+.green-text {
+  color: rgb(60, 255, 0);
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-container p {
+  margin: 0 10px;
+}
+.centered {
+  text-align: center;
+}
+img {
+  /* width: 300px; */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+img.zoomed {
+  transform: scale(2);
+  z-index: 10;
+  position: relative;
+}
+
+.summary-title {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em; /* 可选，增加与后续内容的间距 */
+}
