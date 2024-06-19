@@ -49,9 +49,11 @@
 <!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 ## 凯撒密码
 
-传送情报过程中，容易遭到<span style="color:red;">**中间人攻击**</span>，怎样防止这种情况的发生呢？ 古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为<span class="green-text">**凯撒密码**</span>。加密的原理就像下图这样： 
+<p  style="font-size: 0.7em;">传送情报过程中，容易遭到<span style="color:red;">中间人攻击</span>，怎样防止这种情况的发生呢？ 古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为<span class="green-text">凯撒密码</span>。
+  
+<p class="fragment fade-in" style="font-size: 0.7em;">加密的原理就像下图这样： </p>
 
-<p class="centered"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/ltlt3t6nuf.png?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p>
+<p class="fragment fade-in"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/ltlt3t6nuf.png?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p>
 
 ---
 <!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
@@ -64,22 +66,19 @@
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603113844.png' width="600" style="cursor: zoom-in;"></p>
 
 ---
-<div class="container">
-<div id="left" style="font-size: 0.60em;">
-
 <!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<span class="green-text">**凯撒密码**</span>在当时是一种有效的加密方法，它是典型的<span class="green-text">**对称加密**</span>算法，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到原文。
-
-这也导致<span class="green-text">**凯撒密码**</span>的安全性较低，因为只需尝试26个不同的位移就能暴力破解。
-
+<div class="container">
+<div id="right" style="font-size: 0.60em;">
+  <center><strong><big> 暴力破解凯撒密码的示例 </big></strong></center>
+  <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603140434.png' width="600" style="cursor: zoom-in;"></p>
 </div>
 
 
-<div id="right">
+<div id="left" class="fragment fade-in" style="font-size: 0.8em;">
+  <span class="green-text">凯撒密码</span>在当时是一种有效的加密方法，它是典型的<span class="green-text">对称加密</span>算法，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到原文。
+  
+  这也导致<span class="green-text">凯撒密码</span>的安全性较低，因为只需尝试26个不同的位移就能暴力破解。
 
-<center><strong><big> 暴力破解凯撒密码的示例 </big></strong></center>
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603140434.png' width="600" style="cursor: zoom-in;"></p>
 </div>
 </div>
 ---
@@ -110,8 +109,8 @@
 <div id="right">
 
   <section>
-    <p class="fragment fade-in"><small style="font-size: 0.75em;">图中 A 可以理解为<span class="green-text">明文</span>， B 可以理解为<span class="green-text">密钥</span>， A 和 B 异或，那么 A 和 B 异或得到的结果就是<span class="green-text">密文</span>。反之，<span class="green-text">密文</span>和<span class="green-text">密钥</span>进行异或，那么得到的结果就是<span class="green-text">明文</span> A 
-    </small></p>
+    <p class="fragment fade-in"style="font-size: 1.05em;">图中 A 可以理解为<span class="green-text">明文</span>， B 可以理解为<span class="green-text">密钥</span>， A 和 B 异或，那么 A 和 B 异或得到的结果就是<span class="green-text">密文</span>。反之，<span class="green-text">密文</span>和<span class="green-text">密钥</span>进行异或，那么得到的结果就是<span class="green-text">明文</span> A 
+    </p>
   </section>
 
 </div>
@@ -122,7 +121,7 @@
 <!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603175831.png' width="600" style="cursor: zoom-in;"></p>
 
-<p class="fragment fade-in" style="font-size: 0.5em;">图中字母D可以理解为<span class="green-text">明文</span>，蒙版可以理解为<span class="green-text">密钥</span>，D和蒙版做异或运算，就会得到一张没有任何信息的图，也就是<span class="green-text">密文</span>。解密时只要把得到的<span class="green-text">密文</span>和蒙版做异或运算就能得到了字母D也就是<span class="green-text">明文</span>。这就是<span class="green-text">对称加密算法</span>的基本原理。</p>
+<p class="fragment fade-in" style="font-size: 0.7em;">图中字母D可以理解为<span class="green-text">明文</span>，蒙版可以理解为<span class="green-text">密钥</span>，D和蒙版做异或运算，就会得到一张没有任何信息的图，也就是<span class="green-text">密文</span>。解密时只要把得到的<span class="green-text">密文</span>和蒙版做异或运算就能得到了字母D也就是<span class="green-text">明文</span>。这就是<span class="green-text">对称加密算法</span>的基本原理。</p>
 
 ---
 <!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
@@ -470,6 +469,113 @@ OFB模式解密
 
 所以,3 % 2 = 1。
 ```
+
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<p style="font-size: 0.60em; text-align: left;">
+  假设我们拿到了公钥 （7，33），私钥里面也有两个数字 （？，33），这里面公钥和私钥的33数字是相同的，也是公开的。
+</p>
+<p style="font-size: 0.60em; text-align: left;">只有这个 ？ 数字是不能公开的。</p>
+<p style="font-size: 0.60em; text-align: left;">假设要发送 "草" 字给对方，小草的草，这里我们用拼音代替，C,A,O，为了不让别人知道我发的是什么，就需要加密。</p>
+<p style="font-size: 0.60em; text-align: left;">首先把这个"CAO"转换为十进制，为了方便演示，假设A为1，B为2，C为3，以此类推,来看下加密解密过程：</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+  <div class="table-container">
+    <table>
+      <tr>
+          <th colspan="2" style="text-align: center">加密</th>
+          <th colspan="2" style="text-align: center">解密</th>
+      </tr>
+      <tr>
+          <td style="text-align: center">公钥</td>
+          <td style="text-align: center">（7，33）</td>
+          <td style="text-align: center">私钥</td>
+          <td style="text-align: center">（3，33）</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">源数据</td>
+          <td style="text-align: center">C , A , O</td>
+          <td style="text-align: center">密文</td>
+          <td style="text-align: center">9 , 1 , 27</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">十进制</td>
+          <td style="text-align: center">3 , 1 , 15</td>
+          <td style="text-align: center">求幂</td>
+          <td style="text-align: center">9<sup>3</sup> , 1<sup>3</sup> , 27<sup>3</sup></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">求幂</td>
+          <td style="text-align: center">3<sup>7</sup> , 1<sup>7</sup> , 15<sup>7</sup></td>
+          <td style="text-align: center">求幂结果</td>
+          <td style="text-align: center">729，1，19683</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">求幂结果</td>
+          <td style="text-align: center">2187 , 1 , 170859375</td>
+          <td style="text-align: center">求余</td>
+          <td style="text-align: center">729%33，1%33，19683%33</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">求余</td>
+          <td style="text-align: center">2187%33 , 1%33 , 170859375%33</td>
+          <td style="text-align: center">求余结果（十进制）</td>
+          <td style="text-align: center">3，1，15</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">求余结果（密文）</td>
+          <td style="text-align: center">9 , 1 , 27</td>
+          <td style="text-align: center">明文</td>
+          <td style="text-align: center">C , A , O</td>
+      </tr>
+  </table>
+  </div>
+  <p class="fragment fade-in" style="font-size: 0.60em; text-align: left;"> 从上述计算过程，我们可以得出一个公式：<span class="green-text">明文<sup>E</sup> % N = 密文</span>，这里的 <span class="green-text">"E"</span> 表示的是公钥，也就是7，<span class="green-text">"N"</span> 表示的是公钥的第二个数字33。</p>
+  <p class="fragment fade-in" style="font-size: 0.60em; text-align: left;"> 相同的，解密的公式：<span class="green-text">密文<sup>D</sup> % N = 明文</span>,这里的 <span class="green-text">"D"</span> 表示的 是私钥，也就是3，是不能公开的，<span class="green-text">"N"</span> 就是私钥的另一个数字33。</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<p style="font-size: 0.70em; ">可以看出 <span class="green-text">"E"</span> 和 <span class="green-text">"N"</span> 都是公开的，那黑客拿到密文以后不就可以倒推明文了吗？难就难在这里，生成一个数字并不难，倒推就很难了，这个难度就像把一个鸡蛋打碎再将它复原一样。</p>
+
+<p class="centered"><img src='https://cdn.nlark.com/yuque/0/2024/gif/40965929/1718333645158-3748c1e4-565d-4dec-8d6c-26abc3580ca9.gif' width="400" style="cursor: zoom-in;"></p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<p style="font-size: 0.70em; ">之前价值20万刀的那串数字，其实就是公钥里的 <span class="green-text">"N"</span>,共2048比特位，要解开这串数字的秘密，使用一般的电脑破译需要300万亿年。要想更清晰的知道破译有多难，那就必须知道公钥和私钥的制作过程。</p>
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+公钥和私钥的制作过程
+``` 
+这个过程可以分为5步:
+
+（1）2个质数： p = 3; q = 11
+
+（2）质数相乘： N = p × q = 3 × 11 = 33
+
+（3）欧拉函数： T = (p-1) × (q-1) = 2 × 10 = 20
+
+（4）选公钥E，注意，这里的E不是单纯计算出来的，而是选出来的。
+
+    所以需满足三个条件：
+
+      1、 必须是质数
+
+      2、 1 < 公钥 < T 
+
+      3、 不是 T 的因子
+
+    选出 E = (3,33)
+
+（5）算私钥D： （D × E）% T = 1  得到 D = （7，33）
+```
+---
+<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+<div class="summary-title" style="font-size: 1.00em;">总结</div>
+
+<p style="font-size: 0.60em;text-align: left;">
+上面的过程是如何生成公钥和私钥的，这里就不细说了，大家可以自己尝试下。
+这个算法重要的是不能被人知道或者算出私钥的 "D" 数字,要算出 "D" ，就需要 "E" 和 "T" ，
+因为 "E" 是公开的，所以 "T" 是算出私钥 "D" 的重要数字，而要算出 "T"，就需要 "p" 和 "q" 两个质数。
+关键就是这两个质数，如果这个两个质数设置的非常大，不管是 "N" 还是 "T" 都会变得非常巨大，即使公开 "N" ，也很难找到对应的两个质数。而这就是 `RSA` 算法的奥义。
+</p>
 
 ---
           </textarea>

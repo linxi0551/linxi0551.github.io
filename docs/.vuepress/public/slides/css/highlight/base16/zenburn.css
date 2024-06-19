@@ -210,3 +210,20 @@ img.zoomed {
   text-align: center;
   margin-bottom: 1em; /* 可选，增加与后续内容的间距 */
 }
+
+
+.table-container {
+  width: 100%; /* 你可以调整这个百分比来缩小表格 */
+  margin: auto; /* 使表格居中 */
+  font-size: 0.6em; /* 使字体变小 */
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid rgb(253, 253, 253);
+}
+th, td {
+  border: 1px solid rgb(253, 253, 253);
+  padding: 8px;
+  text-align: center;
+}

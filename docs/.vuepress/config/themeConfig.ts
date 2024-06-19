@@ -59,7 +59,7 @@ export default <VdoingThemeConfig>{
         {
           text: '学习笔记',
           items: [
-            { text: '《Java》笔记', link: '' },
+            { text: '《Bug》笔记', link: '/pages/9780fc/' },
             // { text: '《缓存框架》', link: '' },
             // { text: '《持久层框架》', link: '' }
           ]
