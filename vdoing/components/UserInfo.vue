@@ -1,0 +1,134 @@
+<!-- WelcomeMessage.vue -->
+<template>
+  <div class="tags-wrapper card-box">
+    <h2>🎉 欢迎信息 🎉</h2>
+    <p>
+      欢迎来自 {{ province }} {{ city }} {{ district }} 的小伙伴！现在您正使用{{
+        browser
+      }}浏览器版本{{browser_ver}}！
+    </p>
+    <p>📅 今天是充满活力的{{xq}} <br>新的起点，新的希望！</p>
+    <p>🌡️ 天气小助手</p>
+    <p>今日气温：☀️{{ temperature_low }}~🔥{{ temperature_high }}</p>
+    <p>天空的表情：😀{{tqtb}} {{ tq }}</p>
+    <p>📍 IP地址<br>{{ ipAddress }}</p>
+    <p>🐱‍🏍友情提示</p>
+    <p>{{ poetry }} 😘 </p>
+
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+  name: "WelcomeMessage",
+  data() {
+    return {
+      browser_ver:"",
+      browser:"",
+      temperature_high :"",
+      temperature_low :"",
+      province: "",
+      city: "",
+      district: "",
+      greeting: "享受美好的一天！",
+      ipAddress: "",
+      poetry: "",
+      tq:"sunny",
+      xq:""
+    };
+  },
+  async mounted() {
+    try {
+      const ipAddressResponse = await axios.get(
+        "https://api.ipify.org?format=json"
+      );
+      this.ipAddress = ipAddressResponse.data.ip;
+
+      // 使用免费的GeoIP服务获取大致位置信息，注意这类服务可能不够精确且有使用限制
+      const chineseLocationResponse = await axios.get(
+        "https://api.vvhan.com/api/visitor.info"
+      );
+      console.log(chineseLocationResponse);
+      if (chineseLocationResponse.data.success) {
+        // 使用split方法根据分隔符'-'将字符串分割成数组
+        let locationParts = chineseLocationResponse.data.location.split("-");
+
+        // 分割后的数组中，索引0通常是省，索引1通常是市
+        this.province = locationParts[0]; // "福建省"
+        this.city = locationParts[1]; // "福州市"
+        this.browser = chineseLocationResponse.data.browser;//浏览器名称
+        this.browser_ver = chineseLocationResponse.data.browser_ver;//浏览器版本
+        this.temperature_high  = chineseLocationResponse.data.high;//最高温度
+        this.temperature_low  = chineseLocationResponse.data.low.split("°C")[0];//最低温度
+        this.poetry  = chineseLocationResponse.data.tip;
+        this.tq  = chineseLocationResponse.data.tq;
+        this.xq  = chineseLocationResponse.data.week;
+      } else {
+        console.error("未能成功获取中文位置信息");
+      }
+    } catch (error) {
+      console.error("获取用户信息失败", error);
+    }
+  },
+};
+</script>
+
+<style lang='stylus'>
+.tags-wrapper {
+  text-align: center;
+  padding: 0 0.95rem;
+
+  .title {
+    color: var(--textColor);
+    opacity: 0.9;
+    font-size: 1.2rem;
+
+    &::before {
+      margin-right: 0.3rem;
+    }
+  }
+
+  .tags {
+    text-align: justify;
+    padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+    margin: 0 -0.5rem -0.5rem -0.5rem;
+
+    a {
+      opacity: 0.8;
+      display: inline-block;
+      padding: 0.2rem 0.4rem;
+      transition: all 0.4s;
+      background-color: var(--textColor);
+      color: var(--mainBg);
+      border-radius: 3px;
+      margin: 0 0.3rem 0.5rem 0;
+      min-width: 2rem;
+      height: 1rem;
+      line-height: 1rem;
+      font-size: 0.8rem;
+      text-align: center;
+
+      @media (max-width: $MQMobile) {
+        font-weight: 400;
+      }
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      &.active {
+        box-shadow: 0 5px 10px -5px var(--randomColor, rgba(0, 0, 0, 0.15));
+        transform: scale(1.22);
+        opacity: 1;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+</style>
+
