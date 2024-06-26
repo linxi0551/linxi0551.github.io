@@ -154,6 +154,7 @@
           :length="30"
         />
         <UserInfo/>
+        <Calendar/>
         <!-- <div
           class="custom-html-box card-box"
           v-if="homeSidebarB"
@@ -176,6 +177,7 @@ import BloggerBar from '@theme/components/BloggerBar'
 import CategoriesBar from '@theme/components/CategoriesBar'
 import TagsBar from '@theme/components/TagsBar'
 import UserInfo from '@theme/components/UserInfo'
+import Calendar from '@theme/components/Calendar'
 
 const MOBILE_DESKTOP_BREAKPOINT = 720 // refer to config.styl
 
@@ -243,7 +245,7 @@ export default {
       };
     }
   },
-  components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination,UserInfo },
+  components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination,UserInfo,Calendar },
   created() {
     this.total = this.$sortPosts.length
   },
