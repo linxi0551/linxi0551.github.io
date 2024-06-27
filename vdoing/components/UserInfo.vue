@@ -57,9 +57,17 @@ export default {
       );
 
       if(response.data.success){
+        console.log(response.data);
         this.browser = response.data.browser;//浏览器名称
         this.browser_ver = response.data.browser_ver;//浏览器版本
         this.poetry  = response.data.tip;
+        this.temperature_high  = response.data.high;//最高温度
+        this.temperature_low  = response.data.low.split("°C")[0];//最低温度
+        this.xq  = response.data.week;
+        this.tq  = response.data.tq;  // 天气
+        this.yl = this.getDailyWisdom(); // 添加这行来设置每天的语录
+        
+      
       }
     
 
@@ -69,18 +77,17 @@ export default {
         this.province = chineseLocationResponse.data.result.city.Province; // "福建省"
         this.city = chineseLocationResponse.data.result.city.City; // "福州市"
         
-       
-        this.temperature_high  = chineseLocationResponse.data.result.condition.max_degree+"°C";//最高温度
-        this.temperature_low  = chineseLocationResponse.data.result.condition.min_degree;//最低温度
-
-        this.tq  = chineseLocationResponse.data.result.condition.day_weather;
-        this.xq  = response.week;
-        this.yl = this.getDailyWisdom(); // 添加这行来设置每天的语录
+        if(this.temperature_high === "-" || this.temperature_low === "-" || this.tq === "-"){
+          this.temperature_high  = chineseLocationResponse.data.result.condition.max_degree+"°C";//最高温度
+          this.temperature_low  = chineseLocationResponse.data.result.condition.min_degree;//最低温度
+          this.tq  = chineseLocationResponse.data.result.condition.day_weather;  // 天气
+        }
         if(this.tq==="晴"){
           this.bq = "😀"
         }else{
           this.bq = "😞"
         } 
+       
       } else {
         console.error("未能成功获取中文位置信息");
       }
