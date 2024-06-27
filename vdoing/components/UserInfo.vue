@@ -13,7 +13,7 @@
     <p>天空的表情：{{ bq }} {{ tq }}</p>
     <p>📍 IP地址<br>{{ ipAddress }}</p>
     <p>🐱‍🏍友情提示</p>
-    <p>{{ poetry }} 😘 </p>
+    <p>{{ poetry === '-' ? '享受美好的一天~😊' : poetry + ' 😘' }}</p>
 
   </div>
 </template>
@@ -31,7 +31,6 @@ export default {
       province: "",
       city: "",
       district: "",
-      greeting: "享受美好的一天！",
       ipAddress: "",
       poetry: "",
       tq:"",
@@ -47,25 +46,35 @@ export default {
       );
       this.ipAddress = ipAddressResponse.data.ip;
 
-      // 使用免费的GeoIP服务获取大致位置信息，注意这类服务可能不够精确且有使用限制
-      const chineseLocationResponse = await axios.get(
+      const response = await axios.get(
         "https://api.vvhan.com/api/visitor.info"
       );
-      console.log(chineseLocationResponse);
-      if (chineseLocationResponse.data.success) {
-        // 使用split方法根据分隔符'-'将字符串分割成数组
-        let locationParts = chineseLocationResponse.data.location.split("-");
+
+      
+      // 使用免费的GeoIP服务获取大致位置信息，注意这类服务可能不够精确且有使用限制
+      const chineseLocationResponse = await axios.get(
+        "https://api.oioweb.cn/api/weather/GetWeather"
+      );
+
+      if(response.data.success){
+        this.browser = response.data.browser;//浏览器名称
+        this.browser_ver = response.data.browser_ver;//浏览器版本
+        this.poetry  = response.data.tip;
+      }
+    
+
+      if (chineseLocationResponse.data.msg === "success") {
 
         // 分割后的数组中，索引0通常是省，索引1通常是市
-        this.province = locationParts[0]; // "福建省"
-        this.city = locationParts[1]; // "福州市"
-        this.browser = chineseLocationResponse.data.browser;//浏览器名称
-        this.browser_ver = chineseLocationResponse.data.browser_ver;//浏览器版本
-        this.temperature_high  = chineseLocationResponse.data.high;//最高温度
-        this.temperature_low  = chineseLocationResponse.data.low.split("°C")[0];//最低温度
-        this.poetry  = chineseLocationResponse.data.tip;
-        this.tq  = chineseLocationResponse.data.tq;
-        this.xq  = chineseLocationResponse.data.week;
+        this.province = chineseLocationResponse.data.result.city.Province; // "福建省"
+        this.city = chineseLocationResponse.data.result.city.City; // "福州市"
+        
+       
+        this.temperature_high  = chineseLocationResponse.data.result.condition.max_degree+"°C";//最高温度
+        this.temperature_low  = chineseLocationResponse.data.result.condition.min_degree;//最低温度
+
+        this.tq  = chineseLocationResponse.data.result.condition.day_weather;
+        this.xq  = response.week;
         this.yl = this.getDailyWisdom(); // 添加这行来设置每天的语录
         if(this.tq==="晴"){
           this.bq = "😀"
