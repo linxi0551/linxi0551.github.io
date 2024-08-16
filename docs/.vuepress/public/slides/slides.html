@@ -1,72 +1,88 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>加密的那些事</title>
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./dist/reset.css" />
-    <link rel="stylesheet" href="./dist/reveal.css" />
-    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
-    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section data-markdown data-separator="\r?\n---\r?\n" data-separator-vertical="\r?\n----\r?\n">
-          <textarea data-template>
-            
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>加密的那些事</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/solarized.css" id="theme" />
+  <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown data-separator="\r?\n---\r?\n" data-separator-vertical="\r?\n----\r?\n">
+        <textarea data-template>
 
 
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 历史上的密码
 
-<!-- **漫画**：https://cloud.tencent.com/developer/article/1394806 -->
 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/zbw5goanfw.jpg' width="500" style="cursor: zoom-in;"></p>
-
-早在古罗马时期，加密算法就被应用于战争当中。 在大规模的战争中，部队之间常常需要信使往来，传递重要的军事情报。 
-
+## 古典密码
+______________
+CLASSICAL CIPHER
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/s81l0wvnzd.jpg' width="700" style="cursor: zoom-in;"></p>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">早在古罗马时期，加密算法就被应用于战争当中。 在大规模的战争中，部队之间常常需要信使往来，传递重要的军事情报 </p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">早在古罗马时期，加密算法就被应用于战争当中。 在大规模的战争中，部队之间常常需要信使往来，传递重要的军事情报 </p>
+  <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/zbw5goanfw.jpg' width="600" style="cursor: zoom-in;"></p>
+</section>
 
-可是，一旦信使被敌军抓获，重要的军事情报就完全暴露给了敌方。
+<section data-auto-animate>
+  <p style="font-size: 0.7em;" >可是，一旦信使被敌军抓获，重要的军事情报就完全暴露给了敌方</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;" >可是，一旦信使被敌军抓获，重要的军事情报就完全暴露给了敌方</p>
+  <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/s81l0wvnzd.jpg' width="600" style="cursor: zoom-in;"></p>
+</section>
 
+<section data-auto-animate>
+  <p style="font-size: 0.7em;" >甚至，狡猾的敌人有可能篡改军事情报，并收买信使把假情报传递给我方部队</span>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;" >甚至，狡猾的敌人有可能篡改军事情报，并收买信使把假情报传递给我方部队</span>
+  <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/5rl2i6buw1.jpg' width="600" style="cursor: zoom-in;"></p>
+</section>
+
+  <section data-auto-animate>
+    <p  style="font-size: 0.7em;">传送情报过程中，容易遭到<span style="color:red;">中间人攻击</span>，怎样防止这种情况的发生呢？
+  </section>
+  <section data-auto-animate>
+    <p  style="font-size: 0.7em;">传送情报过程中，容易遭到<span style="color:red;">中间人攻击</span>，怎样防止这种情况的发生呢？
+      <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/07/04/eaa7319864ed8d12487fd9d5ef64500f.jpg' width="400" style="cursor: zoom-in;"></p>
+  </section>
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/thtjd7mn2l.jpg' width="650" style="cursor: zoom-in;"></p>
-
-甚至，狡猾的敌人有可能篡改军事情报，并收买信使把假情报传递给我方部队。
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/5rl2i6buw1.jpg' width="700" style="cursor: zoom-in;"></p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
 ## 凯撒密码
-
-<p  style="font-size: 0.7em;">传送情报过程中，容易遭到<span style="color:red;">中间人攻击</span>，怎样防止这种情况的发生呢？ 古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为<span class="green-text">凯撒密码</span>。
+______________
+CAESAR CODE
+---
+古罗马时期，凯撒大帝想出了一种非常朴素的加密方法，这套加密方法也被后世称为<span class="green-text">凯撒密码</span>。
+  <p class="fragment fade-in"><img src='https://tuchuang.voooe.cn/images/2024/07/02/4293ee8e503cc8382bf161e25b4aff4.png' width="500" style="cursor: zoom-in;"></p>
   
-<p class="fragment fade-in" style="font-size: 0.7em;">加密的原理就像下图这样： </p>
+---
+ 
+加密的原理就像下图这样
 
-<p class="fragment fade-in"><img src='https://ask.qcloudimg.com/http-save/yehe-2960417/ltlt3t6nuf.png?imageView2/2/w/1620' width="700" style="cursor: zoom-in;"></p>
+<p><img src='https://tuchuang.voooe.cn/images/2024/07/04/ltlt3t6nuf.png' width="700" style="cursor: zoom-in;"></p>
+
+
+<p class="fragment fade-in">原理其实非常简单，就是把字母表进行 <span class="green-text">移位加密</span>，比如将字母表中的 A 平移后变成 C，将字母表中的 B 平移后变成 D，这里的平移位数就是<span class="green-text">密钥</span>。</p>
 
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-原理其实非常简单，就是把字母表进行 <span class="green-text">**移位加密**</span>，比如将字母表中的 A 移位加密后变成 C，将字母表中的 B 移位加密后变成 D，以此类推。
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
+  
 <center><strong><big> 下面是更直观的示例 </big></strong></center>
 
 <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603113844.png' width="600" style="cursor: zoom-in;"></p>
 
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+ 
 <div class="container">
 <div id="right" style="font-size: 0.60em;">
   <center><strong><big> 暴力破解凯撒密码的示例 </big></strong></center>
@@ -75,595 +91,828 @@
 
 
 <div id="left" class="fragment fade-in" style="font-size: 0.8em;">
-  <span class="green-text">凯撒密码</span>在当时是一种有效的加密方法，它是典型的<span class="green-text">对称加密</span>算法，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到原文。
+  凯撒密码在当时是一种有效的加密方法，它属于<span class="green-text">移位代替密码</span>，是典型的<span class="green-text">对称加密</span>体制，它的加密和解密密钥用的都是同一个密钥，加密的时候字母表平移了几位，解密的时候只要反向平移就能得到明文。
   
-  这也导致<span class="green-text">凯撒密码</span>的安全性较低，因为只需尝试26个不同的位移就能暴力破解。
+  这也导致凯撒密码的安全性较低，因为只需尝试<span style="color:red;">26</span>个不同的位移就能<span style="color:red;">暴力破解</span>。
 
 </div>
 </div>
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 计算机时代的密码
-
-现代加密技术在<span class="green-text">**凯撒密码**</span>的基础上进行了改进，采用了更复杂的加密算法，如<span class="green-text">**对称加密（AES、DES）**</span>和<span class="green-text">**非对称加密（RSA）**</span>。
+## 栅栏密码
+______________
+FENCE CODE
+---
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">栅栏密码比凯撒密码年轻了许多，它最早出现在1861年至1865年的美国南北战争时期。和凯撒密码的<span class="green-text">代替密码</span>不同，栅栏密码属于<span class="green-text">置换密码</span>，通过打乱明文字母的位置，使有意义的明文信息变换为无意义的密文乱码。</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">栅栏密码比凯撒密码年轻了许多，它最早出现在1861年至1865年的美国南北战争时期。和凯撒密码的<span class="green-text">代替密码</span>不同，栅栏密码属于<span class="green-text">置换密码</span>，通过打乱明文字母的位置，使有意义的明文信息变换为无意义的密文乱码。</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/03/54912907a9dc48bd85748d1d2f5940c1.webp' width="700" style="cursor: zoom-in;"></p>
+</section>
 
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 二进制编码
-<small>学过计算机的都知道，在计算机的世界，所有数据都是以二进制的形式存储的，计算机的运算都是基于二进制的，每个字母当然也是一串二进制数字。</small>
-
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603145534.png' width="500" style="cursor: zoom-in;"></p>
----
-
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 异或运算
-<small style="font-size: 0.75em;"><span class="green-text">**异或运算**(`XOR`)</span>是一种常见的位操作运算,相同位为0，不同位为1。</small>
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603154039.png' width="500" style="cursor: zoom-in;"></p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<div class="container">
-  <div id="left" style="font-size: 0.70em;">
-异或运算有一个非常好的性质，它的性质就是下面这张图
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603171743.png' width="500" style="cursor: zoom-in;"></p>
-</div>
-<div id="right">
-
-  <section>
-    <p class="fragment fade-in"style="font-size: 1.05em;">图中 A 可以理解为<span class="green-text">明文</span>， B 可以理解为<span class="green-text">密钥</span>， A 和 B 异或，那么 A 和 B 异或得到的结果就是<span class="green-text">密文</span>。反之，<span class="green-text">密文</span>和<span class="green-text">密钥</span>进行异或，那么得到的结果就是<span class="green-text">明文</span> A 
-    </p>
+<section data-auto-animate>
+  <p ><strong><big>加密的原理</big></strong> </p>
+</section>
+<section data-auto-animate>
+    <p><strong><big>加密的原理</big></strong> </p>
+    <p>明文按列写入，密文按行输出</p>
+    <p ><img src='https://tuchuang.voooe.cn/images/2024/07/03/640.webp' width="200" style="cursor: zoom-in;"></p>
   </section>
-
-</div>
-
-</div>
-
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/03/_20240603175831.png' width="600" style="cursor: zoom-in;"></p>
 
-<p class="fragment fade-in" style="font-size: 0.7em;">图中字母D可以理解为<span class="green-text">明文</span>，蒙版可以理解为<span class="green-text">密钥</span>，D和蒙版做异或运算，就会得到一张没有任何信息的图，也就是<span class="green-text">密文</span>。解密时只要把得到的<span class="green-text">密文</span>和蒙版做异或运算就能得到了字母D也就是<span class="green-text">明文</span>。这就是<span class="green-text">对称加密算法</span>的基本原理。</p>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">假设有一明文：<span class="green-text">HAPPY  NEW  YEAR</span></p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">假设有一明文：<span class="green-text">HAPPY  NEW  YEAR</span></p>
 
+    <p  style="font-size: 0.7em;">首先给它分栏，把明文一上一下分成N个一栏，这里分成两栏</p>
+    <div class="table-container">
+      <table >
+        <thead>
+          <tr>
+            <th>H</th>
+            <th>P</th>
+            <th>Y</th>
+            <th>E</th>
+            <th>Y</th>
+            <th>A</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>P</td>
+            <td>N</td>
+            <td>W</td>
+            <td>E</td>
+            <td>R</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fragment fade-in" style="font-size: 0.8em; margin-top: 20px;">把每栏的字母横向连起来，就形成一段看起来毫无意义的密文</div>
+    <div class="fragment fade-in" style="font-size: 0.9em;margin-top: 20px;">密文：<span class="green-text">HPYEYAAPNWER</span></div>
+</section>
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-### 分组密码模式
+<section data-auto-animate>
+  解密的时候只要把密文
+  <span style="display:inline-block;" data-id="left-half">HPYEYA</span>
+    <!-- <span style="opacity: 0; visibility: hidden;" data-id="separator">|</span> -->
+  <span style="display:inline-block;"   data-id="right-half">APNWER</span>
+  从中间分开
 
-现在用的比较多的对称加密算法有<span class="green-text">DES</span>和<span class="green-text">AES</span>，这两个算法都是把明文切成<span class="green-text">固定的比特长度大小</span>，再进行复杂的位运算加密，但它们本身只处理固定长度的数据块（例如AES处理128位数据块）。为了适应不同长度的明文信息，保护数据的完整性和安全性，这时候就需要引入<span class="green-text">分组密码模式</span>。
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 明文分组和密文分组
+</section>
 
-在介绍模式之前，我们先来学习两个术语。
+<section data-auto-animate>
 
-<p class="fragment fade-in" style="font-size: 0.7em;"><mark>明文分组:</mark> 是指分组密码算法中作为加密对象的明文，明文分组的长度与分组密码算法的分组长度是相等的。</p>
-
-<p class="fragment fade-in" style="font-size: 0.75em;"><mark>密文分组:</mark> 是指使用分组密码算法将明文分组加密之后所生成的密文。</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/e1d6157e726360b8c83cc8629e1b123.png' width="800" style="cursor: zoom-in;"></p>
-为了避免图示变得复杂，以后我们将 <span class="green-text">"分组密码算法加密"</span> 简写为 <span class="green-text">"加密"</span>，并省略对<span class="green-text">密钥</span>的描述。
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-常见的分组密码模式有五种，分别是：**电码本模式（ECB模式）**、**密码分组链接模式（CBC模式）**、**密文反馈模式（CFB）**、**输出反馈模式（OFB）**、**计数器模式（CTR）**。
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 电码本模式（ECB模式）
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/04/_20240604155659.png' width="500" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" ><small style="font-size: 0.70em;">从上图中可以看到每个数据块都是<span class="green-text">独立加密</span>的，块与块之间不存在任何联系，所以加密的时候可<span class="green-text">并行</span>加密，速度非常快，而且实现也简单。这种模式适用于<span class="green-text">无重复数据</span>的短消息加密场景。这是<span class="green-text">ECB模式</span>的优点。</small></p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<small style="font-size: 0.70em;">那这个模式有什么缺点呢，可以看下下面这个例子：</small>
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/fda187c5d4bf9d3f01f9e3d35d12742.png' width="700" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in"><small style="font-size: 0.50em;">在这个场景中我们可以将付款人银行账号、收款人银行账号和转账金额进行分组，得到明文分组1、2、3的16进制表示的ASCII码序列，通过分组加密后得到分组密文，这时候只知道密文分组1是付款人、密文分组2是收款人、密文分组3是转账金额。至于具体的内容并不知道，因为进行了加密。</small></p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/14/2d64dab3-eea8-433b-8e81-a818b174e13c.jpg' width="700" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" ><small style="font-size: 0.70em;">如果这个时候有<span style="color:red;">黑客攻击</span>，他会用什么手段进行攻击呢？</small></p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/7f96709cce53a75294af2e76e7d5446.png' width="700" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" ><small style="font-size: 0.70em;">攻击者并不需要密钥解密密文，就可以直接操作密文从而影响明文，只要对密文块进行<span style="color:red;">重新排序</span>，就能让解密后的付款人和收款人的顺序进行互换，这对银行转账业务来说是致命的。</small>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-这就是ECB模式的重要缺陷之一，它<span style="color:red;">缺乏扩散性</span>，每个数据块独立加密，彼此之间不存在关联，容易被密文<span span style="color:red;">重排序</span>攻击。并且相同的明文无论出现在哪个位置都会被<span span style="color:red;">加密成相同的密文</span>，这导致它模式是<span style="color:red;">可预测性</span>的。
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 密码分组链接模式（CBC模式）
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="container">
-  <div id="left" style="font-size: 0.70em;">
-    CBC模式加密
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/_20240607101439.png'  style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-</div>
-<div id="right">
-  <p class="fragment fade-in" style="font-size: 0.90em;">
-    加密的过程
-  </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          1. 首先将明文切成若干组。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          2. 明文分组1先和初始向量进行异或运算。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          3. 再用密钥对明文分组1和初始向量异或的结果进行加密，得到密文分组1。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          4. 用密文分组1和明文分组2进行异或运算，异或完后再进行加密得到密文分组2。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          5. 同样的用密文分组2和明文分组3进行异或运算，异或完后再进行加密得到密文分组3，以此类推。
-        </p>
+  <span style="display:inline-block; margin-right: 95px; color: green;" data-id="left-half">HPYEYA</span>
+  <span style="opacity: 1; visibility: visible;" data-id="separator">|</span>
+  <span style="display:inline-block; margin-left: 95px; color: green;" data-id="right-half">APNWER</span>
   
-</div>
-
-</div>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="container">
-  <div id="left" style="font-size: 0.70em;">
-    CBC模式解密
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/88e3616a82c8ad93f1be7a0a756e609.png'  style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-</div>
-<div id="right">
-  <p class="fragment fade-in" style="font-size: 0.90em;">
-    解密的过程
-  </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          1. 首先拿密文分组1来解密。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          2. 密文分组1解密得到的结果和初始化向量做异或运算，就得到明文分组1。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          3. 密文分组2进行解密。
-        </p>
-        <p class="fragment fade-in" style="font-size: 0.70em;">
-          4. 密文分组2解密得到的结果和密文分组1做异或运算，就得到明文分组2，以此类推。
-        </p>
-</div>
-
-</div>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="summary-title" style="font-size: 1.50em;">优点</div>
-<p style="font-size: 0.70em;">这种<span class="green-text">依赖</span>前一个密文分组进行的异或运算就叫做<span class="green-text">CBC模式</span>，这种模式有个好处就是即使相同的明文块在不同位置或不同消息中也会<span class="green-text">产生不同的密文块</span>，并且<span class="green-text">具备数据完整保护性</span>。适用于常规<span class="green-text">文件加密</span>，<span class="green-text">非实时</span>加密场景。</p>
-
-<p style="font-size: 0.70em;">之前通过<span class="green-text">重排序</span>攻击的手段，明显对这种模式是无效的，因为会导致密文块的<span class="green-text">顺序</span>被<span class="green-text">破坏</span>，从而导致解密失败。</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-那CBC模式有什么<span style="color:red;">缺陷</span>呢？
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="summary-title" style="font-size: 0.90em;">示例</div>
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/e945024575166790bc0d03a3374788a.png' width="700" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" style="font-size: 0.70em;">从图中可以看到攻击者截获了初始化向量，并对它的某一比特位进行了反转，那么解密后的第一个明文块的相应比特位也会被反转，但其他比特位依然是正确的。<mark><span style="color:red;">也就是说攻击者可以通过操作初始化向量来影响明文，并且不需要密钥</span></mark>，这就是CBC模式的缺陷所在。</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 密文反馈模式（CFB）
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-CFB模式加密
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/07/4a00827a6a0f293a181bb0933d38c89.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-<p class="fragment fade-in" style="font-size: 0.70em;"> <span class="green-text">CFB模式</span>它直接对初始化向量进行加密，加密完的结果跟明文分组1做异或操作，得出密文分组1，密文分组1进行加密后和明文分组2进行异或操作，得出密文分组2，以此类推。</p>
----
-
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-CFB模式解密
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/5af5e8792d566b188635dfcb62b74e8.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-<p class="fragment fade-in" style="font-size: 0.70em;">解密过程和加密过程非常相似，但 <span class="green-text">方向相反</span>，首先也是对初始化向量进行加密，再和密文分组1做异或操作，得到明文分组1。密文分组1先加密，再和密文分组2做异或操作，得到明文分组2，以此类推。
-</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="summary-title" style="font-size: 1.50em;">优点</div>
-之前通过控制初始化向量来影响明文的攻击手段就无效了，因为把初始向量中的某个比特位反转，会导致<span class="green-text">加密后的密钥流发生变化</span>，从而导致第一个明文块无法正确解密，也就无法通过操控初始化向量来影响明文解密了。
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-那CFB模式有什么<span style="color:red;">缺陷</span>呢？
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/d7dd240cd2b8f0a13c36de753d9f73d.png' width="700" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" style="font-size: 0.68em;">
-  从图中可以看到攻击者截获了数据包，并用<span style="color:red;">以前有效的密文分组</span>对现有的密文分组进行了<span style="color:red;">替换</span>，这就造成了明文分组2的解密出现了错误，但后续的分组还是能正确解密。<mark><span style="color:red;">从某种程度上说，这也是不通过密钥就可以操纵明文</span></mark>，这明显是不对的。
-  </p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 输出反馈模式（OFB模式）
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-OFB模式加密
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/39708d679f6e04c5224816e1e1d10f3.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-<p class="fragment fade-in" style="font-size: 0.70em;"> 上图中也是对初始化向量进行加密，加密完后和明文分组1做异或运算，得出密文分组1，接着再对初始化向量进行加密，然后和明文分组2做异或运算，得出密文分组2，这种反复对初始化向量进行加密，再和明文做异或运算的行为就是<span class="green-text">OFB模式。</span></p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-OFB模式解密
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/11/f6a5c297428560f05188d0835d2cfa2.png' width="650" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-<p class="fragment fade-in" style="font-size: 0.70em;"> 解密也是如此，只是和初始化向量做异或运算的由<span class="green-text">明文变成了密文</span>。</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="summary-title" style="font-size: 1.50em;">优点</div>
-<p style="font-size: 0.70em;"><span class="green-text">OFB模式</span>由于密钥流<span class="green-text">独立</span>于明文，加密过程不直接作用于明文，而是通过密钥流与明文异或，这意味着相同的明文在不同的密钥流下会产生不同的密文，这有助于<span class="green-text">抵抗模式识别攻击</span>和<span class="green-text">重放攻击</span>。
-</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-那OFB模式有什么<span style="color:red;">缺陷</span>呢？
-
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="fragment fade-in" style="font-size: 0.70em;">每个密钥流块的生成依赖于前一个密钥流块。这种依赖关系导致无法完全并行生成密钥流块。具体来说，必须按照<span style="color:red;">顺序</span>生成密钥流块，只有在生成了前一个密钥流块之后，才能生成下一个密钥流块。尽管在生成密钥流之后，异或操作可以并行执行，但密钥流的生成步骤本身是<span style="color:red;">串行</span>的。这种串行依赖性限制了OFB模式在密钥流生成阶段的<span style="color:red;">并行处理能力</span>。</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 计数器模式（CTR模式）
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="container">
-  <div id="left" style="font-size: 0.70em;">
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/f84f7b3815dc1f1917584253ff6d8b9.png' width="700" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-</div>
-<div id="right">
-  <p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/a23819b1024be58673db362a9fa462b.png' width="700" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-</div>
-</div>
-<p style="font-size: 0.60em;"class="fragment fade-in" >上图中和<span class="green-text">OFB模式</span>的加密过程类似，只是密钥流分组的生成方式不同，OFB模式密钥流分组是通过将前一个密钥流分组加密得到的。也就是说，它是基于前一次加密操作的输出作为下一次加密的输入，形成一个<span class="green-text">反馈环路</span>。
-  而<span class="green-text">CTR模式</span>是通过<span class="green-text">递增的计数器</span>和初始向量结合后，将这个组合值作为输入加密得到。计数器每次加密前递增，确保每次加密操作使用的是独一无二的输入，从而产生不同的密钥流分组，即使加密相同的明文分组也会产生不同的密文。
-</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-计数器模式中，计数器是如何生成的？
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/3813d265b20e77ccf56c21ae58b7802.png' width="500" style="cursor: zoom-in;"alt="Image 1" onclick="zoomImage(this)"></p>
-<p style="font-size: 0.60em;"class="fragment fade-in" >上图<span class="green-text">前8个字节为随机数</span>，这个值在每次加密时必须都是不同的，<span class="green-text">后8个字节为分组序号</span>，这个部分是会<span class="green-text">逐次累加</span>的。在加密的过程中，计数器的值会产生如下变化：</p>
-<!-- 动态插入代码块的示例，这里简化为展示概念，实际应用中可能需要JavaScript辅助 -->
-<div class="fragment fade-in">
-  <pre><code class="javascript">66 1F 98 CD 37 A3 8B 4B 00 00 00 00 00 00 00 01 明文分组1的计数器</code></pre>
-</div>
-<div class="fragment fade-in">
-  <pre><code class="javascript">61 2F 22 54 21 46 5F 6E 00 00 00 00 00 00 00 02 明文分组2的计数器</code></pre>
-</div>
-<div class="fragment fade-in">
-  <pre><code class="javascript">63 1C 31 ED TR 57 23 1F 00 00 00 00 00 00 00 03 明文分组3的计数器</code></pre>
-</div>
-<div class="fragment fade-in">
-  <pre><code class="javascript">42 1E E1 BC 13 12 81 24 00 00 00 00 00 00 00 04 明文分组4的计数器</code></pre>
-</div>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="summary-title" style="font-size: 1.50em;">优点</div>
-<p style="font-size: 0.70em;">CTR模式的这种计数器生成和使用方法确保了密钥流的<span class="green-text">唯一性</span>和<span class="green-text">安全性</span>，并且加密和解密过程都可以<span class="green-text">并行</span>处理，<span class="green-text">效率高</span>。</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<div class="summary-title" style="font-size: 1.00em;">总结</div>
-<p style="font-size: 0.60em;text-align: left;">
-  不同的加密模式适用于不同的应用场景，选择合适的加密模式需要考虑安全性、实现复杂度、处理速度和具体应用场景的需求。以下是一些选择的原则：
-</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">1、通用数据加密（如文件存储、数据库加密）:</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">CBC模式: 提供了较好的数据混淆，防止模式识别，适合大多数加密需求。但注意，对于大数据量处理，CBC模式的顺序执行可能影响性能。</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">2、实时通信（如网络数据传输）:</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">CTR模式: 由于其并行性和高效性，CTR模式非常适合需要高速处理的实时数据加密，如网络流量加密。</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">OFB模式: 同样支持并行处理，适用于需要流式加密的场景，但不如CTR常见，因为CTR模式更灵活且在现代系统中更受欢迎。</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">3、资源受限设备（如嵌入式系统）:</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">ECB模式: 对于极度资源受限的环境，虽然安全性较低，但ECB模式简单，易于实现，且不需要维护状态，适合简单或一次性数据加密。</p>
-<p class="fragment fade-in" style="font-size: 0.50em;text-align: left;">CFB模式: 在资源有限但需要一定安全性和错误隔离的情况下，CFB可以作为折衷方案，因为它相比ECB提供了更好的安全性，但比CBC和CTR的资源消耗低。</p>
-  
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-### 公钥密码
-
-公钥密码，也称为<span class="green-text">非对称密码</span>，是一种加密技术，它使用一对密钥：<span class="green-text">公钥（public key）</span>和<span class="green-text">私钥（private key）</span>。因为 <span class="green-text">加密</span> 和 <span class="green-text">解密</span> 使用的是两个不同的密钥，所以这种算法称为 <span class="green-text">非对称加密算法</span>，常见的 <span class="green-text">非对称算法</span> 主要有`RSA`、`DSA`、`ECC`等。 
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-#### 一点历史
-<p class="fragment fade-in" style="font-size: 0.65em;">1976年以前，所有的加密方法都是同一种模式：</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">1. 甲方选择某一种加密规则，对信息进行加密</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">2. 乙方使用同一种规则，对信息进行解密</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">由于加密和解密使用同样规则（简称"密钥"），这被称为"对称加密算法"。
-<p class="fragment fade-in" style="font-size: 0.65em;">这种加密模式有一个最大弱点：甲方必须把加密规则告诉乙方，否则无法解密。保存和传递密钥，就成了最头疼的问题。
-</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/bg2013062703.jpg' width="500" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" style="font-size: 0.65em;">1976年，两位美国计算机学家菲尔德·迪菲(Whitfield Diffie) 和 马丁·赫尔曼(Martin Hellman)，提出了一种崭新构思，可以在不直接传递密钥的情况下，完成解密。这被称为"Diffie-Hellman密钥交换算法"。这个算法启发了其他科学家。人们认识到，加密和解密可以使用不同的规则，只要这两种规则之间存在某种对应关系即可，这样就避免了直接传递密钥。</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" --> 
-<p class="fragment fade-in" style="font-size: 0.75em;">这种新的加密模式被称为"非对称加密算法"</p>
-<p class="fragment fade-in" style="font-size: 0.75em;">工作流程</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">（1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">（2）甲方获取乙方的公钥，然后用它对信息加密。</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">（3）乙方得到加密后的信息，用私钥解密。</p>
-<p class="fragment fade-in" style="font-size: 0.65em;">如果公钥加密的信息只有私钥解得开，那么只要私钥不泄漏，通信就是安全的。</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/12/bg2013062702.jpg' width="500" style="cursor: zoom-in;"></p>
-<p class="fragment fade-in" style="font-size: 0.55em;">1977年，三位数学家罗纳德·李维斯特（Rivest）、阿迪·萨莫尔（Shamir） 和 伦纳德·阿德曼（Adleman） 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做RSA算法。
-从那时直到现在，RSA算法一直是最广为使用的"非对称加密算法"。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。
-这种算法非常可靠，密钥越长，它就越难破解。根据已经披露的文献，目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<p class="centered"><img src='https://tuchuang.voooe.cn/images/2024/06/13/4c19788c01e101a8cd8f2964619f3d7.png' width="500" style="cursor: zoom-in;"></p>
-
-<p class="fragment fade-in" style="font-size: 0.55em;">上图是2048位的密钥，早在1991年，RSA实验室就公布了一份数字列表，并向任何人提出挑战，以20万美元的奖金计算这些数字。</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-### 原理 
-讲原理前，需要知道一些数学知识，先回顾一下小学的数学知识😀
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-因数
-``` java
-给定方程 a × b = c，数字 a 和 b 被定义为因数，因为它们的乘积等于 c。
-
-例如:
-
-当 2 × 3 = 6 时，数字 2 和 3 构成了 6 的一组因数。
-
-同样，对于 1 × 6 = 6，数字 1 和 6 也是 6 的另一组因数。
-
-因此，数字 6 拥有至少两组因数。
-```
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-质数
-``` java
-1 × a = a 根据质数的定义，如果一个大于1的整数 a 仅有两个不同的正因数，
-
-即 1 和 a 本身，那么该整数 a 被视为质数。
-
-例如：
-
-1 × 5 = 5，我们看到 5 大于 1，并且其唯一的正因数是 1 和 5。
-
-因此，根据上述质数的定义，数字 5 是一个质数。
-```
-
----
-
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-余数
-``` java
-在表达式 a % b = c 中，% 表示取模运算，也称为模运算或求余运算。
-
-例如:
-
-计算3除以2的余数,过程如下：
-
-除法运算：
-
-3 ÷ 2 = 1.5
-
-取整数部分：
-
-1.5的整数部分是1
-
-计算乘积：
-
-2 x 1 = 2
-
-计算余数：
-
-3 - 2 = 1
-
-因此,3除以2的余数是1。
-
-用公式表示：
-
-3÷2=1(商)
-
-3 - (2 x 1)= 1 (余数)
-
-所以,3 % 2 = 1。
-```
-
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<p style="font-size: 0.60em; text-align: left;">
-  假设我们拿到了公钥 （7，33），私钥里面也有两个数字 （？，33），这里面公钥和私钥的33数字是相同的，也是公开的。
-</p>
-<p style="font-size: 0.60em; text-align: left;">只有这个 ？ 数字是不能公开的。</p>
-<p style="font-size: 0.60em; text-align: left;">假设要发送 "草" 字给对方，小草的草，这里我们用拼音代替，C,A,O，为了不让别人知道我发的是什么，就需要加密。</p>
-<p style="font-size: 0.60em; text-align: left;">首先把这个"CAO"转换为十进制，为了方便演示，假设A为1，B为2，C为3，以此类推,来看下加密解密过程：</p>
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
+  <!-- 表格部分保持不变 -->
   <div class="table-container">
     <table>
-      <tr>
-          <th colspan="2" style="text-align: center">加密</th>
-          <th colspan="2" style="text-align: center">解密</th>
-      </tr>
-      <tr>
-          <td style="text-align: center">公钥</td>
-          <td style="text-align: center">（7，33）</td>
-          <td style="text-align: center">私钥</td>
-          <td style="text-align: center">（3，33）</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">源数据</td>
-          <td style="text-align: center">C , A , O</td>
-          <td style="text-align: center">密文</td>
-          <td style="text-align: center">9 , 1 , 27</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">十进制</td>
-          <td style="text-align: center">3 , 1 , 15</td>
-          <td style="text-align: center">求幂</td>
-          <td style="text-align: center">9<sup>3</sup> , 1<sup>3</sup> , 27<sup>3</sup></td>
-      </tr>
-      <tr>
-          <td style="text-align: center">求幂</td>
-          <td style="text-align: center">3<sup>7</sup> , 1<sup>7</sup> , 15<sup>7</sup></td>
-          <td style="text-align: center">求幂结果</td>
-          <td style="text-align: center">729，1，19683</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">求幂结果</td>
-          <td style="text-align: center">2187 , 1 , 170859375</td>
-          <td style="text-align: center">求余</td>
-          <td style="text-align: center">729%33，1%33，19683%33</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">求余</td>
-          <td style="text-align: center">2187%33 , 1%33 , 170859375%33</td>
-          <td style="text-align: center">求余结果（十进制）</td>
-          <td style="text-align: center">3，1，15</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">求余结果（密文）</td>
-          <td style="text-align: center">9 , 1 , 27</td>
-          <td style="text-align: center">明文</td>
-          <td style="text-align: center">C , A , O</td>
-      </tr>
-  </table>
+      <thead>
+        <tr>
+          <th>H</th>
+          <th>P</th>
+          <th>Y</th>
+          <th>E</th>
+          <th>Y</th>
+          <th>A</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>P</td>
+          <td>N</td>
+          <td>W</td>
+          <td>E</td>
+          <td>R</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <p class="fragment fade-in" style="font-size: 0.60em; text-align: left;"> 从上述计算过程，我们可以得出一个公式：<span class="green-text">明文<sup>E</sup> % N = 密文</span>，这里的 <span class="green-text">"E"</span> 表示的是公钥，也就是7，<span class="green-text">"N"</span> 表示的是公钥的第二个数字33。</p>
-  <p class="fragment fade-in" style="font-size: 0.60em; text-align: left;"> 相同的，解密的公式：<span class="green-text">密文<sup>D</sup> % N = 明文</span>,这里的 <span class="green-text">"D"</span> 表示的 是私钥，也就是3，是不能公开的，<span class="green-text">"N"</span> 就是私钥的另一个数字33。</p>
+  <div class="fragment fade-in" style="font-size: 0.8em; margin-top: 20px;">  再按上下上下的顺序组合起来就能得到明文</div>
+    <div class="fragment fade-in" style="font-size: 0.9em;margin-top: 20px;">明文：<span class="green-text"> HAPPY  NEW  YEAR</span></div>
+
+</section>
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<p style="font-size: 0.70em; ">可以看出 <span class="green-text">"E"</span> 和 <span class="green-text">"N"</span> 都是公开的，那黑客拿到密文以后不就可以倒推明文了吗？难就难在这里，生成一个数字并不难，倒推就很难了，这个难度就像把一个鸡蛋打碎再将它复原一样。</p>
-
-<p class="centered"><img src='https://cdn.nlark.com/yuque/0/2024/gif/40965929/1718333645158-3748c1e4-565d-4dec-8d6c-26abc3580ca9.gif' width="400" style="cursor: zoom-in;"></p>
+## 斯巴达密码棒
+______________
+SPARTAN CODE STICK
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<p style="font-size: 0.70em; ">之前价值20万刀的那串数字，其实就是公钥里的 <span class="green-text">"N"</span>,共2048比特位，要解开这串数字的秘密，使用一般的电脑破译需要300万亿年。要想更清晰的知道破译有多难，那就必须知道公钥和私钥的制作过程。</p>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">在古希腊，斯巴达军方使用一种叫做密码棒的装置来加密信息，这种装置由一条皮带和一根木棍组成。 在展开时，皮带似乎只是一串随机字符，但如果缠绕在一定大小的木棒上，字母会对齐成单词</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">在古希腊，斯巴达军方使用一种叫做密码棒的装置来加密信息，这种装置由一条皮带和一根木棍组成。 在展开时，皮带似乎只是一串随机字符，但如果缠绕在一定大小的木棒上，字母会对齐成单词</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/05/_20240705111404.png' width="700" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate-target>
+  <p style="font-size: 0.7em;">柯南中的密码棒灵感就来源于此</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/05/ff2604a724b43164231291ba156f072.png' width="500" style="cursor: zoom-in;"></p>
+</section>
 ---
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-公钥和私钥的制作过程
-``` 
-这个过程可以分为5步:
-
-（1）2个质数： p = 3; q = 11
-
-（2）质数相乘： N = p × q = 3 × 11 = 33
-
-（3）欧拉函数： T = (p-1) × (q-1) = 2 × 10 = 20
-
-（4）选公钥E，注意，这里的E不是单纯计算出来的，而是选出来的。
-
-    所以需满足三个条件：
-
-      1、 必须是质数
-
-      2、 1 < 公钥 < T 
-
-      3、 不是 T 的因子
-
-    选出 E = (3,33)
-
-（5）算私钥D： （D × E）% T = 1  得到 D = （7，33）
-```
----
-<!-- .slide: data-background="https://tuchuang.voooe.cn/images/2024/04/28/sky1.jpg" -->
-<div class="summary-title" style="font-size: 1.00em;">总结</div>
-
-<p style="font-size: 0.60em;text-align: left;">
-上面的过程是如何生成公钥和私钥的，这里就不细说了，大家可以自己尝试下。
-这个算法重要的是不能被人知道或者算出私钥的 "D" 数字,要算出 "D" ，就需要 "E" 和 "T" ，
-因为 "E" 是公开的，所以 "T" 是算出私钥 "D" 的重要数字，而要算出 "T"，就需要 "p" 和 "q" 两个质数。
-关键就是这两个质数，如果这个两个质数设置的非常大，不管是 "N" 还是 "T" 都会变得非常巨大，即使公开 "N" ，也很难找到对应的两个质数。而这就是 `RSA` 算法的奥义。
-</p>
+<section data-auto-animate>
+  <p >在古典密码时代，密码学的概念还是比较模糊的，尽管大量被用在军事领域，但加密方式更像是一种艺术行为，反正就一个理念，瞎换乱转，有一定的投机性 </p>
+</section>
+<section data-auto-animate>
+    <p>在古典密码时代，密码学的概念还是比较模糊的，尽管大量被用在军事领域，但加密方式更像是一种艺术行为，反正就一个理念，瞎换乱转，有一定的投机性</p>
+   
+    <p ><img src='https://tuchuang.voooe.cn/images/2024/07/04/006r3PQBjw1fa7r9dzt46j3064064dfw.jpg' width="200" style="cursor: zoom-in;"></p>
+  </section>
 
 ---
-          </textarea>
-        </section>
+<section data-auto-animate>
+  <p >而在我国古代也有藏头诗、藏尾诗，比如广为人知的唐伯虎写的"我爱秋香" </p>
+</section>
+<section data-auto-animate>
+    <p>而在我国古代也有藏头诗、藏尾诗，比如广为人知的唐伯虎写的"我爱秋香"</p>
+    <p ><img src='https://tuchuang.voooe.cn/images/2024/07/05/6abdd46d80b33eed2cfcf7c2b266507.png' width="600" style="cursor: zoom-in;"></p>
+  </section>
+  <section data-auto-animate>
+    <div class="content-wrapper">
+    <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/05/6abdd46d80b33eed2cfcf7c2b266507.png' width="600" style="cursor: zoom-in;"></p>
+    <div class="poem">
+      <span  class="highlighted">我</span>画蓝江水悠悠，
+      <br>
+      <span class="highlighted">爱</span>晚亭上枫叶愁。
+      <br>
+      <span class="highlighted">秋</span>月溶溶照佛寺，
+      <br>
+      <span class="highlighted">香</span>烟袅袅绕经楼。
+    </div>
+  </div>
+  </section>
+  <section data-auto-animate>
+    <p >也有先秦兵书《六韬》中提到的阴符 </p>
+  </section>
+  <section data-auto-animate>
+      <p>也有先秦兵书《六韬》中提到的阴符</p>
+      <p ><img src='https://tuchuang.voooe.cn/images/2024/07/04/1310e75fb41e95452ac64521788477a.png' width="300" style="cursor: zoom-in;"></p>
+    </section>
+    <section data-auto-animate  >
+        <p><strong><big>阴符</big></strong></p>
+        <p> 
+          <span><img src='https://tuchuang.voooe.cn/images/2024/07/04/ed57b26db10918d75f732a0ab891b1d.png' width="200" style="cursor: zoom-in;">    </span>     
+        </p>
+    </section>
+    <section data-auto-animate  >
+      <p><strong><big>阴符</big></strong></p>
+      <div class="image-grid"> 
+        <span><img src='https://tuchuang.voooe.cn/images/2024/07/04/ed57b26db10918d75f732a0ab891b1d.png' width="200" style="cursor: zoom-in;">    </span>     
+        <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/3be0c95d6881e2244aae2cb2c20286e.png' width="500" style="cursor: zoom-in;">    </span>     
       </div>
-    </div>  
+  </section>
+ <section data-auto-animate>
+  <div class="image-and-text" >
+    <span><img src='https://tuchuang.voooe.cn/images/2024/07/04/ed57b26db10918d75f732a0ab891b1d.png' width="200" style="cursor: zoom-in;"></span>
+    <span class="fragment"><img src='https://tuchuang.voooe.cn/images/2024/07/04/_20240704182451.png' width="200" style="cursor: zoom-in;"></span>
+    <span class="fragment vertical-text">解释：越长战绩越好</span>
+    <span class="fragment vertical-text">优点：便于携带且不易引起敌方怀疑</span>
+    <span class="fragment vertical-text">缺点：传递的信息量很少</span>
+    <!-- <span class="fragment"><img src='https://tuchuang.voooe.cn/images/2024/07/05/fdca3c60-cd9c-4f68-bb2b-ab603a338727.jpg' width="400" style="cursor: zoom-in;"></span> -->
+    <!-- <span class="fragment"><img src='https://tuchuang.voooe.cn/images/2024/07/05/640.jpg' width="400" style="cursor: zoom-in;"></span> -->
+  </div>
+</section>
 
-    <script src="./dist/reveal.js"></script>
 
-    <!-- <script src="./mermaid/dist/mermaid.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">在《六韬》的龙韬篇中，有记载：</p>
+  <p style="font-size: 0.7em;">
+ 武王问太公曰:"引兵深入诸侯之地，主将欲合兵，行无穷之变，图不测之利，其事烦多，符不能明，相去辽远，言语不通，为之奈何?"
+ </p>
+ <p style="font-size: 0.7em;">
+ 太公曰:"诸有阴事大虑，当用书不用符。主以书遗将，将以书问主，书皆一合而再离，三发而一知。再离者，分书为三部;三发而一知者，言三人，人操一分，相参而不相知情也，此谓阴书。敌虽圣智，莫之能识。"
+ </p>
+ <p style="font-size: 0.7em;">
+ 武王曰:"善哉!"</p>
+ </section>
+<section data-auto-animate>
+ <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/fdca3c60-cd9c-4f68-bb2b-ab603a338727.jpg' width="400" style="cursor: zoom-in;"></span>
+ <p style="font-size: 0.7em;">在《六韬》的龙韬篇中，有记载：</p>
+ <p style="font-size: 0.7em;">
+武王问太公曰:"引兵深入诸侯之地，主将欲合兵，行无穷之变，图不测之利，其事烦多，符不能明，相去辽远，言语不通，为之奈何?"
+</p>
+<p style="font-size: 0.7em;">
+太公曰:"诸有阴事大虑，当用书不用符。主以书遗将，将以书问主，书皆一合而再离，三发而一知。再离者，分书为三部;三发而一知者，言三人，人操一分，相参而不相知情也，此谓阴书。敌虽圣智，莫之能识。"
+</p>
+<p style="font-size: 0.7em;">
+武王曰:"善哉!"</p>
+</section>
+<section data-auto-animate>
+  <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/fdca3c60-cd9c-4f68-bb2b-ab603a338727.jpg' width="400" style="cursor: zoom-in;"></span>
+  <p style="font-size: 0.7em;">在《六韬》的龙韬篇中，有记载：</p>
+  <p style="font-size: 0.7em;">
+    武王问太公："率领军队深入敌国境内，国君与主将想要集结兵力，根据敌情进行灵活的机动。用阴符难以说明问题，彼此相距又十分遥远。在这种情况下应该怎么办？"
+ </p>
+ <p style="font-size: 0.7em;">
+  　太公回答："用阴书，就是把一封书信分为三个部分；然后派三个人送信，每人只有其中的一部分，即使送信的人也不知道书信的内容。这样，即使敌人抓了信使，也是不知道书信的内容。"
+ </p>
+ <p style="font-size: 0.7em;">
+ 武王曰:"高明啊!"</p>
+ </section>
+
+<section data-auto-animate>
+  <p><strong><big>阴书</big></strong></p>
+  <div class="image-and-text">
+  <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/640.jpg' width="400" style="cursor: zoom-in;"></span>
+  <span class="fragment"><img src='https://tuchuang.voooe.cn/images/2024/07/05/acbef3f06c556d0f74577c8395b14d4.png' width="770" style="cursor: zoom-in;"></span>
+  <span class="fragment vertical-text">一分为三的阴书</span>
+</div>
+</section>
+---
+<section data-auto-animate>
+  <div style="font-size: 0.8em; margin-top: 20px;">  除此之外还有很多好玩的古典密码</div>
+  <div class="carousel-container">
+    <div class="carousel-slides">
+      <!-- 你的图片列表 -->
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/128596ed3a7ec5146920e82e6c73726.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/cf68ced9f8c53eec5b44454766dd369.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/4b29c55bcc06dc8052bef1b5300bea1.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/74bd62d1046cc4f745ebf3f4f82ba04.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/d5882d95c6f85be3a6df04b3fe269b3.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/16435fd0695c348b94c96ad21750231.png' width="400" style="cursor: zoom-in;"></span>
+     <!-- 克隆的图片 -->
+     <span class="clone"><img src='https://tuchuang.voooe.cn/images/2024/07/05/128596ed3a7ec5146920e82e6c73726.png' width="400" style="cursor: zoom-in;"></span>
+     <span class="clone"><img src='https://tuchuang.voooe.cn/images/2024/07/05/cf68ced9f8c53eec5b44454766dd369.png' width="400" style="cursor: zoom-in;"></span>
+     <span class="clone"><img src='https://tuchuang.voooe.cn/images/2024/07/05/4b29c55bcc06dc8052bef1b5300bea1.png' width="400" style="cursor: zoom-in;"></span>
+     <span class="clone"><img src='https://tuchuang.voooe.cn/images/2024/07/05/74bd62d1046cc4f745ebf3f4f82ba04.png' width="400" style="cursor: zoom-in;"></span>
+     <span class="clone"><img src='https://tuchuang.voooe.cn/images/2024/07/05/d5882d95c6f85be3a6df04b3fe269b3.png' width="400" style="cursor: zoom-in;"></span>
+     <span class="clone"><img src='https://tuchuang.voooe.cn/images/2024/07/05/16435fd0695c348b94c96ad21750231.png' width="400" style="cursor: zoom-in;"></span>
+   </div>
+  </div>
+</section>
+
+<section data-auto-animate>
+  <p><strong><big>太对称了</big></strong></p>
+  <div class="image-and-text">
+      <!-- 你的图片列表 -->
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/128596ed3a7ec5146920e82e6c73726.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/cf68ced9f8c53eec5b44454766dd369.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/4b29c55bcc06dc8052bef1b5300bea1.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/74bd62d1046cc4f745ebf3f4f82ba04.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/d5882d95c6f85be3a6df04b3fe269b3.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/16435fd0695c348b94c96ad21750231.png' width="400" style="cursor: zoom-in;"></span>
+  </div>
+  <span class="fragment">这里说的对称有两种含义</span>
+</section>
+
+<section data-auto-animate>
+  <p><strong><big>太对称了</big></strong></p>
+  <div class="image-and-text">
+      <!-- 你的图片列表 -->
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/128596ed3a7ec5146920e82e6c73726.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/cf68ced9f8c53eec5b44454766dd369.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/4b29c55bcc06dc8052bef1b5300bea1.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/74bd62d1046cc4f745ebf3f4f82ba04.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/d5882d95c6f85be3a6df04b3fe269b3.png' width="400" style="cursor: zoom-in;"></span>
+      <span><img src='https://tuchuang.voooe.cn/images/2024/07/05/16435fd0695c348b94c96ad21750231.png' width="400" style="cursor: zoom-in;"></span>
+  </div>
+  <span >第一种：加密是可逆的，一旦知道怎样加密，就很容易反推出怎么解密。</span>
+</section>
+
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">所以古人只要随便抓个活口就知道密码是怎么玩的</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">所以古人只要随便抓个活口就知道密码是怎么玩的</p>
+  <p><img src='https://tuchuang.voooe.cn/images/2024/07/05/0b77cf8bd3166575cd09b0fdf11501f.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+---
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">另一种对称的意思是：不管你如何对明文进行替换，总会形成一种明文和密文的一一对应关系</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">另一种对称的意思是：不管你如何对明文进行替换，总会形成一种明文和密文的一一对应关系</p>
+  <p><img src='https://tuchuang.voooe.cn/images/2024/07/08/59e78f8dbf24db773aa60d25c88a760.png' width="800" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">另一种对称的意思是：不管你如何对明文进行替换，总会形成一种明文和密文的一一对应关系</p>
+  <p><img src='https://tuchuang.voooe.cn/images/2024/07/08/28da1b2e8aa416c59d6af45f0ad2c31.png' width="800" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">另一种对称的意思是：不管你如何对明文进行替换，总会形成一种明文和密文的一一对应关系</p>
+  <p><img src='https://tuchuang.voooe.cn/images/2024/07/08/82fd9a0009d56a03e16d7de8c7ec2eb.png' width="800" style="cursor: zoom-in;"></p>
+</section>
+---
+<section data-auto-animate>
+  <p class="fragment" style="font-size: 0.8em;">英语字母频率统计</p>
+  <p><img src='https://tuchuang.voooe.cn/images/2024/07/08/4f649f093dd6f80713a1a895839923d.png' width="250" style="cursor: zoom-in;"></p>
+</section>
+
+<section data-auto-animate>
+  <div style="font-size: 0.8em;">英语字母频率统计</div>
+  <div class="content-wrapper">
+   
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/08/4f649f093dd6f80713a1a895839923d.png' width="100" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p><img src='https://tuchuang.voooe.cn/images/2024/07/08/6beff5cf5e400680b1819a680c50fa4.png' width="1000" style="cursor: zoom-in;"></p>
+  </div>
+</div>
+</section>
+
+<section data-auto-animate>
+    <p><img src='https://tuchuang.voooe.cn/images/2024/07/08/e4344ab59b78a6f151b762f6c2438ca.png' width="1000" style="cursor: zoom-in;"></p>
+    <p  style="font-size: 0.7em;">O在密文中频率最高，因此密文O对应的很可能是使用频率最高的字母E</p>
+</div>
+</section>
+---
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">因此不管怎么替换，只要被截获的密文一多，总会被频率分析法拿捏</p>
+</div>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">因此不管怎么替换，只要被截获的密文一多，总会被频率分析法拿捏</p>
+  <span><img src='https://tuchuang.voooe.cn/images/2024/07/08/DKiNUOuBtWloz22hTjHqaOW4j0t3XQeW.gif' width="300" style="cursor: zoom-in;"></span>
+</div>
+</section>
+---
+## 恩尼格玛机
+______________
+ENIGMA
+---
+<section data-auto-animate>
+  <p style="font-size: 0.78em;">古典密码的巅峰之作恩尼格玛机，是由德国发明并在二战期间广泛使用的加密和解密机器，又称作哑谜机，或"谜"式密码机</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.78em;">古典密码的巅峰之作恩尼格玛机，是由德国发明并在二战期间广泛使用的加密和解密机器，又称作哑谜机，或"谜"式密码机</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/09/d9df8e080dd24fe6aa9da728217e648.png' width="400" style="cursor: zoom-in;"></p>
+</section>
 
 
-    <script src="./plugin/markdown/markdown.js"></script>
-    <script src="./plugin/highlight/highlight.js"></script>
-    <script src="./plugin/zoom/zoom.js"></script>
-    <script src="./plugin/notes/notes.js"></script>
-    <script src="./plugin/math/math.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script>
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/09/d9df8e080dd24fe6aa9da728217e648.png' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">恩格玛机的伟大之处就在于它在进行<span class="green-text">高度复杂的加密运算</span>的同时，<span class="green-text">操作的简易性</span>也几乎做到了极致。</p>
+    <p style="font-size: 0.7em;">操作者只需像使用打字机一样在键盘上输入消息，加密后的字母就会在灯盘上显示出来，这使得即使是<span class="green-text">未经专业训练的人员</span>也能快速上手。</p>
+  </div>
+</div>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/09/02ae90d344e982c9771629088ccfa0b.png' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">而且明文中<span class="green-text">相同的字母也会被加密成不同的密文</span>，这就很好的防止了频率分析法，另外即使知道其运作原理也很难破解。</p>
+  </div>
+</div>
+</section>
+
+---
+
+<section data-auto-animate>
+  <p >这是如何做到的？</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/09/15f5170a-bc53-4cea-81e6-786f4d2361bb.jpg' width="300" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">首先先看下恩尼格玛机的组成部件</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/08/_20240708175116.png' width="500" style="cursor: zoom-in;"></p>
+</section>
+
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/08/_20240708175116.png' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;"><span  class="highlighted">键盘</span>：输入明文或者密文用的</p>
+    <p style="font-size: 0.7em;"><span  class="highlighted">灯盘</span>：在键盘上输入一个字母，灯盘上会有一个字母亮起来，代表键盘上输入的字母加密后的结果</p>
+    <p style="font-size: 0.7em;"><span  class="highlighted">转子</span>：这个是恩格玛机的核心，是加密元件</p>
+    <p style="font-size: 0.7em;"><span  class="highlighted">插线板</span>：这是在转子进行加密后，为了提高安全性而增加的装置</p>
+  </div>
+</div>
+</section>
+
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">之所以恩尼格玛机在当时很难破解，主要还是因为它的核心元件"转子"</p>
+
+    <div >
+<span><img src='https://tuchuang.voooe.cn/images/2024/07/09/13f0785b6bed27a999cff630240a3b1f_hd.jpg' width="300" style="cursor: zoom-in;">
+<img src='https://tuchuang.voooe.cn/images/2024/07/09/f49c8d2aff0678220d15dc71d7105233_hd.jpg' width="300" style="cursor: zoom-in;"></span>
+  </div>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/08/f2ba52588641e0732334271c871c821.png' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">转子就像是可以旋转的密码锁，比如当你按下"A"键时，"A"通过转子时，它会被替换成另一个字母，比如"D"</p>
+  </div>
+</div>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/09/2020_1230_ac45a449g00qm599z062td200n10099g00id007d.gif' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">但是，神奇的地方在于，当你再次按下"A"键时，由于转子已经旋转，它可能变成"E"或另一个字母，而不是"D"。这是因为每次按键后，转子都会转动，改变内部的连接，所以同一个字母可以被替换成不同的字母</p>
+  </div>
+</div>
+</section>
+
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/09/e093f1e976540c1c8118e24be63a228.png' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">一台恩尼格玛机通常使用了三个转子串联起来，有时更多,当一个转子转完一圈，它会推动下一个转子转动一点</p>
+  </div>
+</div>
+</section>
+
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/09/e093f1e976540c1c8118e24be63a228.png' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">这意味着，随着输入更多的字母，转子的组合方式会变得极其复杂，使得相同的字母在不同的位置被替换成不同的字母</p>
+  </div>
+</div>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/09/gif_QQ20240709163627_2024070916380595.gif' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <p style="font-size: 0.7em;">由于每个转子都有26个可能的位置，所以三个转子一共可以提供<span class="green-text">26 X 26 X 26=17576</span>种可能性</p>
+  </div>
+</div>
+</section>
+<section data-auto-animate>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/11/222bc15f8af8ba7e60ad31e836cf0a99_hd.jpg' width="500" style="cursor: zoom-in;"></p>
+    <p style="font-size: 0.7em;">恩格玛机除了转子，还有个重要装置：反射器</p>
+</div>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/11/222bc15f8af8ba7e60ad31e836cf0a99_hd.jpg' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <ul>
+      <li style="font-size: 0.7em;">性质一：加密过程是自反的</li>
+      <li style="font-size: 0.7em;">性质二：一个字母加密后的输出结果不会是自己本身</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/11/222bc15f8af8ba7e60ad31e836cf0a99_hd.jpg' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <ul>
+      <li style="font-size: 0.7em;"><span  class="highlighted">性质一</span>：加密过程是自反的</li>
+      <ul><li style="font-size: 0.6em;">解释：假如输入"A"输出"G"，反过来，输入"G"将会输出"A",这样既可以用来加密也可以用来解密</li></ul>
+    </p>
+      <li style="font-size: 0.7em;">性质二：一个字母加密后的输出结果不会是自己本身</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section data-auto-animate>
+  <div class="content-wrapper">
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/11/222bc15f8af8ba7e60ad31e836cf0a99_hd.jpg' width="500" style="cursor: zoom-in;"></p>
+  <div class="poem">
+    <ul>
+      <li style="font-size: 0.7em;">性质一：加密过程是自反的</li>
+      <ul><li style="font-size: 0.6em;">解释：假如输入"A"输出"G"，反过来，输入"G"将会输出"A",这样既可以用来加密也可以用来解密</li></ul>
+    </p>
+      <li style="font-size: 0.7em;"><span  class="highlighted">性质二</span>：一个字母加密后的输出结果不会是自己本身</li>
+      <ul><li style="font-size: 0.6em;">一个字母如果加密后要还是自己，在左图中就会变成"A"从红线进去，然后从红线再返回来，但是经过反射器，导致"A"的返回路径是蓝线，所以字母加密后结果不是其本身</li></ul>
+    </ul>
+  </div>
+</div>
+</section>
+<section data-auto-animate>
+  <p  ><img src='https://tuchuang.voooe.cn/images/2024/07/09/1.gif' width="700" style="cursor: zoom-in;"></p>
+    <p style="font-size: 0.7em;">除此之外，为了保险起见它的外侧还附加一组交换机制"插线板"，也就是说如果连通"O"和"E"，当按下"O"时，其实相当于按下了"E"，这种连线最多可以有六根</p>
+</section>
+<section data-auto-animate>
+  <p  ><img src='https://tuchuang.voooe.cn/images/2024/07/09/1.gif' width="700" style="cursor: zoom-in;"></p>
+    <p style="font-size: 0.7em;">插线板上两两交换6对字母的可能性则是异常庞大，有<span class="green-text">100,391,791,500</span>种</p>
+</section>
+<section data-auto-animate>
+  <p  ><img src='https://tuchuang.voooe.cn/images/2024/07/09/1.gif' width="700" style="cursor: zoom-in;"></p>
+    <p style="font-size: 0.7em;">最终17576 X 100391791500=<span class="green-text">1764486127404000</span>种</p>
+</section>
+---
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">在没有计算机时代，想通过逆向穷举的方式几乎是不可能的！</p>
+  <p><img src='https://tuchuang.voooe.cn/images/2024/07/10/20200227112318887.png' width="300" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">况且当时的恩尼格玛机每天都会更换一次初始方案</p>
+  <div class="carousel-container">
+    <div class="carousel-slides">
+      <!-- 你的图片列表 -->
+      <span>第一天<img src='https://tuchuang.voooe.cn/images/2024/07/10/1.png' width="400"  style="cursor: zoom-in;"></span>
+      <span>第二天<img src='https://tuchuang.voooe.cn/images/2024/07/10/2.png' width="400"  style="cursor: zoom-in;"></span>
+      <span>第三天<img src='https://tuchuang.voooe.cn/images/2024/07/10/3.png' width="400"  style="cursor: zoom-in;"></span>
+      <span>第四天<img src='https://tuchuang.voooe.cn/images/2024/07/10/4.png' width="400"  style="cursor: zoom-in;"></span>
+   </div>
+  </div>
+</section>
+<section data-auto-animate-target>
+    
+     <p style="font-size: 0.7em;">如果当天算不出，第二天就得重新计算，这使得暴力破解又更难了</p>
+     <span ><img src='https://tuchuang.voooe.cn/images/2024/07/10/u26898724423734607591fm253fmtautoapp138fJPEG.webp' width="400"  style="cursor: zoom-in;"></span>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">但了解二战的小伙伴都知道，恩尼格玛机最终还是被<span class="green-text">破解</span>了,甚至没等到计算机的诞生</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">1940年，计算机之父英国数学家艾伦·图灵就破解了恩尼格玛机</p>
+  <span ><img src='https://tuchuang.voooe.cn/images/2024/07/10/v2-6ee378fc707312b6a7ea7fda139802a8_720w.webp' width="400"  style="cursor: zoom-in;"></span>
+
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">不是说恩尼格玛机没有计算机就无法破解的吗？</p>
+  <span ><img src='https://tuchuang.voooe.cn/images/2024/07/10/38362ad137253af3146a8e7034abcf4.png' width="400"  style="cursor: zoom-in;"></span>
+
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.8em;">说法虽没错，但遭不住德国人太轴又太飘</p>
+  <span ><img src='https://tuchuang.voooe.cn/images/2024/07/10/xtl.gif' width="700"  style="cursor: zoom-in;"></span>
+</section>
+
+<section data-auto-animate>
+  不管发啥都要来一句Heil Hitler！
+      <img src='https://tuchuang.voooe.cn/images/2024/07/11/92e358746ae07d621398a4e3a075dc9.png'  style="cursor: zoom-in;">
+      
+</section>
+<section data-auto-animate>
+  不管发啥都要来一句Heil Hitler！
+      <img src='https://tuchuang.voooe.cn/images/2024/07/11/92e358746ae07d621398a4e3a075dc9.png'  style="cursor: zoom-in;">
+      <img src='https://tuchuang.voooe.cn/images/2024/07/11/35b376f3899019a1385252f03f8a6bc.png'  style="cursor: zoom-in;">
+      
+</section>
+<section data-auto-animate>
+  不管发啥都要来一句Heil Hitler！
+  <img src='https://tuchuang.voooe.cn/images/2024/07/11/35b376f3899019a1385252f03f8a6bc.png'  style="cursor: zoom-in;">
+  <img src='https://tuchuang.voooe.cn/images/2024/07/11/1dfabefe236a0aa384fa00c170a5ebf.png'  style="cursor: zoom-in;">
+</section>
+<section data-auto-animate>
+  不管发啥都要来一句Heil Hitler！
+  <img src='https://tuchuang.voooe.cn/images/2024/07/11/1dfabefe236a0aa384fa00c170a5ebf.png'  style="cursor: zoom-in;">
+  <img src='https://tuchuang.voooe.cn/images/2024/07/11/eab9ee975c5669d97edb034d16f4036.png'  style="cursor: zoom-in;">
+</section>
+<section data-auto-animate>
+    <p style="font-size: 0.7em;">这种严谨又白给的操作，很快就让图灵拿到了明密对应的线索</p>
+    <span ><img src='https://tuchuang.voooe.cn/images/2024/07/12/image44213bfea108147d.png' width="238"  style="cursor: zoom-in;"></span>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+    <p style="font-size: 0.7em;">依靠这些线索图灵和他的同事戈登·韦尔奇曼发明了叫做"炸弹机"的解密机</p>
+  </div>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">依靠这些线索图灵和他的同事戈登·韦尔奇曼发明了叫做"炸弹机"的解密机</p>
+      <span ><img src='https://tuchuang.voooe.cn/images/2024/07/10/v2-6ee378fc707312b6a7ea7fda139802a8_720w.webp' width="238"  style="cursor: zoom-in;"></span>
+      <span ><img src='https://tuchuang.voooe.cn/images/2024/07/12/3a9bb1e13e7de6cd25c055ab8560585.png' width="200" style="cursor: zoom-in;"></span>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+    <div class="image-container">
+      <img src='https://tuchuang.voooe.cn/images/2024/07/10/v2-6ee378fc707312b6a7ea7fda139802a8_720w.webp' width="120" alt="First Image">
+      <img src='https://tuchuang.voooe.cn/images/2024/07/12/3a9bb1e13e7de6cd25c055ab8560585.png' width="100" alt="Second Image">
+    </div>
+    <svg viewBox="0 0 100 100" fill="currentColor">
+      <!-- SVG path for your arrow -->
+      <path d="M10,50 L90,50" /> 
+      <path d="M80,40 L90,50 L80,60 z" />
+      <!-- Add "发明" text -->
+      <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-size="16px">发明</text>
+    </svg>
+    <div class="image-container">
+      <img src='https://tuchuang.voooe.cn/images/2024/07/12/image.png' width="300" alt="Third Image">
+    </div>
+  </div>
+</section>
+<section data-auto-animate>
+  <div class="content-wrapper">
+    <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/12/image.png' width="500" style="cursor: zoom-in;"></p>
+    <div class="poem">
+      <p style="font-size: 0.7em;">通过"炸弹机"最后硬生生的逆向破解了恩尼格玛机</p>
+    </div>
+  </div>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">所以这又一次说明了像古典密码这样，知道怎么加密就能知道怎么解密的对称加密方法，从根本上来说是肯定会被破解的，只不过是时间问题罢了</p>
+</section>
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">所以这又一次说明了像古典密码这样，知道怎么加密就能知道怎么解密的对称加密方法，从根本上来说是肯定会被破解的，只不过是时间问题罢了</p>
+  <p style="margin-right: 100;"data-id="left-half" ><img src='https://tuchuang.voooe.cn/images/2024/07/12/035c0f8e65024f30a4a57207b235416a.gif' width="400" style="cursor: zoom-in;"></p>
+</section>
+---
+<section data-auto-animate>
+  <p style="font-size: 0.7em;">那有没有哪种加密方式，加密和解密方法不一样？</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/07/12/image1dd249c5c402d465.png' width="300" style="cursor: zoom-in;"></p>
+</section>
+
+---
+## 现代密码
+______________
+MODERN CIPHER
+---
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1976年以前，所有的加密方法都是同一种模式：</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1976年以前，所有的加密方法都是同一种模式：</p>
+  <p  style="font-size: 0.7em;">1.甲方选择某一种加密规则，对信息进行加密</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1976年以前，所有的加密方法都是同一种模式：</p>
+  <p  style="font-size: 0.7em;">1.甲方选择某一种加密规则，对信息进行加密</p>
+  <p  style="font-size: 0.7em;">2.乙方使用同一种规则，对信息进行解密</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1976年以前，所有的加密方法都是同一种模式：</p>
+  <p  style="font-size: 0.7em;">1.甲方选择某一种加密规则，对信息进行加密</p>
+  <p  style="font-size: 0.7em;">2.乙方使用同一种规则，对信息进行解密</p>
+  <p  style="font-size: 0.7em;">由于加密和解密使用同样规则（简称"密钥"），这被称为"对称加密算法"。</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1976年以前，所有的加密方法都是同一种模式：</p>
+  <p  style="font-size: 0.7em;">1.甲方选择某一种加密规则，对信息进行加密</p>
+  <p  style="font-size: 0.7em;">2.乙方使用同一种规则，对信息进行解密</p>
+  <p  style="font-size: 0.7em;">由于加密和解密使用同样规则（简称"密钥"），这被称为"对称加密算法"。</p>
+  <p  style="font-size: 0.7em;">常见的"对称加密算法"有<span class="green-text">DES</span>、<span class="green-text">3DES</span>、<span class="green-text">AES</span></p>
+</section>
+
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/image.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/imaged9d7cee4bce9a7ec.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/image74935d4208fba8d8.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/image8efcb5f52a215413.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种加密模式有一个最大弱点：甲方必须把加密规则告诉乙方，否则无法解密。保存和传递密钥，很容易被人窃取。</p>
+</section>
+
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种加密模式有一个最大弱点：甲方必须把加密规则告诉乙方，否则无法解密。保存和传递密钥，很容易被人窃取。</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/08/05/image6213ba35fd3556f8.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+
+
+---
+
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1977年，三位数学家Rivest（罗纳德·李维斯特）、Shamir（阿迪·萨莫尔） 和 Adleman（伦纳德·阿德曼） 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做RSA算法。从那时直到现在，RSA算法一直是最广为使用的"非对称加密算法"。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">1977年，三位数学家Rivest（罗纳德·李维斯特）、Shamir（阿迪·萨莫尔） 和 Adleman（伦纳德·阿德曼） 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做RSA算法。从那时直到现在，RSA算法一直是最广为使用的"非对称加密算法"。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。</p>
+  <p ><img src='https://tuchuang.voooe.cn/images/2024/06/12/bg2013062702.jpg' width="600" style="cursor: zoom-in;"></p>
+</section>
+
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种新的加密模式被称为"非对称加密算法"</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种新的加密模式被称为"非对称加密算法"</p>
+  <p  style="font-size: 0.7em;">1.乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种新的加密模式被称为"非对称加密算法"</p>
+  <p  style="font-size: 0.7em;">1.乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+  <p  style="font-size: 0.7em;">2.甲方获取乙方的公钥，然后用它对信息加密。</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种新的加密模式被称为"非对称加密算法"</p>
+  <p  style="font-size: 0.7em;">1.乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+  <p  style="font-size: 0.7em;">2.甲方获取乙方的公钥，然后用它对信息加密。</p>
+  <p  style="font-size: 0.7em;">3.乙方得到加密后的信息，用私钥解密。</p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;">这种新的加密模式被称为"非对称加密算法"</p>
+  <p  style="font-size: 0.7em;">1.乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+  <p  style="font-size: 0.7em;">2.甲方获取乙方的公钥，然后用它对信息加密。</p>
+  <p  style="font-size: 0.7em;">3.乙方得到加密后的信息，用私钥解密。</p>
+  <p  style="font-size: 0.7em;">4.如果公钥加密的信息只有私钥解得开，那么只要私钥不泄漏，通信就是安全的。</p>
+</section>
+
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/image76831a3e4a44c491.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/image5a7fbb6ee68895bc.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+<section data-auto-animate>
+  <p  style="font-size: 0.7em;"><img src='https://tuchuang.voooe.cn/images/2024/08/05/image85519bb933e0b878.png' width="400" style="cursor: zoom-in;"></p>
+</section>
+
+---
+## 谢谢观看
+
+---
+
+
+
+          </textarea>
+      </section>
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <!-- <script src="./mermaid/dist/mermaid.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script> -->
+  <script>
     function zoomImage(img) {
-            if (img.classList.contains('zoomed')) {
-                img.classList.remove('zoomed');
-            } else {
-                // Remove 'zoomed' class from all images first
-                document.querySelectorAll('.image-container img').forEach(image => {
-                    image.classList.remove('zoomed');
-                });
-                img.classList.add('zoomed');
-            }
-        }
+      if (img.classList.contains('zoomed')) {
+        img.classList.remove('zoomed');
+      } else {
+        // Remove 'zoomed' class from all images first
+        document.querySelectorAll('.image-container img').forEach(image => {
+          image.classList.remove('zoomed');
+        });
+        img.classList.add('zoomed');
+      }
+    }
 
-      function extend() {
-        var target = {};
-        for (var i = 0; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (source.hasOwnProperty(key)) {
-              target[key] = source[key];
-            }
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
           }
         }
-        return target;
       }
+      return target;
+    }
 
-      // default options to init reveal.js
-      var defaultOptions = {
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'default', // none/fade/slide/convex/concave/zoom
-        slideNumber: true,
-        highlight: {
-          highlightOnLoad: false
-        },
-        plugins: [
-          RevealMarkdown,
-          RevealHighlight,
-          RevealZoom,
-          RevealNotes,
-          RevealMath
-        ]
-      };
+    // default options to init reveal.js
+    var defaultOptions = {
+      parallaxBackgroundImage: '', // 示例："'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
-      // options from URL query string
-      var queryOptions = Reveal().getQueryHash() || {};
+      // 视察背景图尺寸
+      parallaxBackgroundSize: '', // CSS 写法，示例："2100px 900px"（目前只支持像素值，不支持 % 和 auto）
 
-      var options = extend(defaultOptions, {"_":["docs/slides/slides.md"],"static":"docs/slides"}, queryOptions);
-    </script>
+      // 相邻两张幻灯片间，视差背景移动的像素值
+      // - 如果不设置则自动计算
+      // - 当设置为 0 时，则禁止视差动画
+      parallaxBackgroundHorizontal: null,
+      parallaxBackgroundVertical: null,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      // 切换过渡速度
+      // default-中速/fast-快速/slow-慢速
+      transitionSpeed: 'default', // default/fast/slow
+      slideNumber: true,
+      highlight: {
+        highlightOnLoad: false
+      },
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        RevealMath
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+    var options = extend(defaultOptions, { "_": ["docs/slides/slides.md"], "static": "docs/slides" }, queryOptions);
+  </script>
 
 
-    <script>
-      Reveal.initialize(options);
-      Reveal.addEventListener('ready', function (event) {
-        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
-        const hlp = Reveal.getPlugin('highlight');
-        blocks.forEach(hlp.highlightBlock);
-      });
-    </script>
+  <script>
+    Reveal.initialize(options);
+    Reveal.addEventListener('ready', function (event) {
+      const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+      const hlp = Reveal.getPlugin('highlight');
+      blocks.forEach(hlp.highlightBlock);
+    });
+  </script>
 
-    <script>
-      const mermaidOptions = extend({ startOnLoad: false }, {});
-      mermaid.startOnLoad = false;
-      mermaid.initialize(mermaidOptions);
-      const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
-      Reveal.addEventListener('ready', cb);
-      Reveal.addEventListener('slidetransitionend', cb);
-    </script>
-  </body>
+  <script>
+    const mermaidOptions = extend({ startOnLoad: false }, {});
+    mermaid.startOnLoad = false;
+    mermaid.initialize(mermaidOptions);
+    const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
+    Reveal.addEventListener('ready', cb);
+    Reveal.addEventListener('slidetransitionend', cb);
+  </script>
+</body>
+
 </html>

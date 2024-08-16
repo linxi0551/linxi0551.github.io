@@ -86,6 +86,7 @@ export default <VdoingThemeConfig>{
         // { text: '面试', link: '/pages/aea6571b7a8bae86/' },
         // { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
         { text: '实用技巧', link: '/pages/dcebaf/' },
+        { text: '杂文小说', link: '/pages/5c8e73/' },
         { text: '友情链接', link: '/friends/' },
       ],
     },
